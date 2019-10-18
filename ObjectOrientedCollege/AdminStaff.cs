@@ -5,12 +5,14 @@ using System.Text;
 
 namespace ObjectOrientedCollege
 {
-    public class Teacher : Employee
+    public class AdminStaff : Employee
     {
-        private int practiceLevel;
-        private int subject;
+        public Human Hire()
+        {
+            throw new System.NotImplementedException();
+        }
 
-        public void Teach(Student student)
+        public Teacher Fire(Teacher teacher)
         {
             throw new System.NotImplementedException();
         }

@@ -8,5 +8,9 @@ namespace ObjectOrientedCollege
     public class Headman : Student
     {
 
+        public void CreateRaport()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
