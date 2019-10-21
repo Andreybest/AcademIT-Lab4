@@ -5,7 +5,18 @@ using System.Text;
 
 namespace ObjectOrientedCollege
 {
-    public class Employee : Human
+    public abstract class Employee : Human, IMoneyGetting
     {
+        protected int salary;
+
+        public Employee(string firstName, string lastName, int age, string phoneNumber, int salary) : base(firstName, lastName, age, phoneNumber)
+        {
+            this.salary = salary;
+        }
+
+        public void MakeMoney()
+        {
+
+        }
     }
 }

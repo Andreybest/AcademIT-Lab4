@@ -7,7 +7,10 @@ namespace ObjectOrientedCollege
 {
     public class AdminStaff : Employee
     {
-        public Human Hire()
+
+        public AdminStaff(string firstName, string lastName, int age, string phoneNumber, int salary) : base(firstName, lastName, age, phoneNumber, salary) { }
+
+        public Teacher Hire()
         {
             throw new System.NotImplementedException();
         }

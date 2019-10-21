@@ -5,10 +5,8 @@ using System.Text;
 
 namespace ObjectOrientedCollege
 {
-    public class Human
+    public interface IMoneyGetting
     {
-        protected int firstName;
-        protected int lastName;
-        protected int age;
+        void MakeMoney();
     }
 }
