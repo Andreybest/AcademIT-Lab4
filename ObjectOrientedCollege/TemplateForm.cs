@@ -12,11 +12,14 @@ namespace ObjectOrientedCollege
 {
     public partial class TemplateForm : Form
     {
-        public TemplateForm()
+        protected MainMenuForm FormData;
+
+        public TemplateForm(MainMenuForm FormData)
         {
             InitializeComponent();
+            this.FormData = FormData;
         }
-
+        
         private void TemplateForm_Load(object sender, EventArgs e)
         {
             labelLine.Width = TemplateForm.ActiveForm.Size.Width;

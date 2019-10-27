@@ -56,9 +56,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.labelLine);
             this.Controls.Add(this.labelMenuButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TemplateForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.TemplateForm_Load);

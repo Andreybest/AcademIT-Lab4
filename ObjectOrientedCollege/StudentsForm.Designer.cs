@@ -28,9 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scholarship = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moneyAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.knowlageLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.knowlageProgress = new ObjectOrientedCollege.DataGridViewProgressColumn();
+            this.studyButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridViewStudents
+            // 
+            this.dataGridViewStudents.AllowUserToAddRows = false;
+            this.dataGridViewStudents.AllowUserToDeleteRows = false;
+            this.dataGridViewStudents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstName,
+            this.lastName,
+            this.age,
+            this.phoneNumber,
+            this.scholarship,
+            this.moneyAmount,
+            this.knowlageLevel,
+            this.knowlageProgress,
+            this.studyButton});
+            this.dataGridViewStudents.EnableHeadersVisualStyles = false;
+            this.dataGridViewStudents.Location = new System.Drawing.Point(22, 79);
+            this.dataGridViewStudents.Name = "dataGridViewStudents";
+            this.dataGridViewStudents.ReadOnly = true;
+            this.dataGridViewStudents.RowHeadersVisible = false;
+            this.dataGridViewStudents.Size = new System.Drawing.Size(843, 349);
+            this.dataGridViewStudents.TabIndex = 2;
+            this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
+            // 
+            // firstName
+            // 
+            this.firstName.HeaderText = "First Name";
+            this.firstName.Name = "firstName";
+            this.firstName.ReadOnly = true;
+            // 
+            // lastName
+            // 
+            this.lastName.HeaderText = "Last Name";
+            this.lastName.Name = "lastName";
+            this.lastName.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.HeaderText = "Age";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            this.age.Width = 50;
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.HeaderText = "Phone Number";
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.ReadOnly = true;
+            this.phoneNumber.Width = 120;
+            // 
+            // scholarship
+            // 
+            this.scholarship.HeaderText = "Scholarship";
+            this.scholarship.Name = "scholarship";
+            this.scholarship.ReadOnly = true;
+            this.scholarship.Width = 70;
+            // 
+            // moneyAmount
+            // 
+            this.moneyAmount.HeaderText = "Money";
+            this.moneyAmount.Name = "moneyAmount";
+            this.moneyAmount.ReadOnly = true;
+            // 
+            // knowlageLevel
+            // 
+            this.knowlageLevel.HeaderText = "Knowlage Level";
+            this.knowlageLevel.Name = "knowlageLevel";
+            this.knowlageLevel.ReadOnly = true;
+            // 
+            // knowlageProgress
+            // 
+            this.knowlageProgress.HeaderText = "Knowlage Progress";
+            this.knowlageProgress.Name = "knowlageProgress";
+            this.knowlageProgress.ProgressBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.knowlageProgress.ReadOnly = true;
+            this.knowlageProgress.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.knowlageProgress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // studyButton
+            // 
+            this.studyButton.HeaderText = "Study Button";
+            this.studyButton.Name = "studyButton";
+            this.studyButton.ReadOnly = true;
+            this.studyButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.studyButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // StudentsForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.dataGridViewStudents);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "StudentsForm";
+            this.Text = "StudentsFrom";
+            this.Controls.SetChildIndex(this.dataGridViewStudents, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn scholarship;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moneyAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn knowlageLevel;
+        private DataGridViewProgressColumn knowlageProgress;
+        private System.Windows.Forms.DataGridViewButtonColumn studyButton;
     }
 }

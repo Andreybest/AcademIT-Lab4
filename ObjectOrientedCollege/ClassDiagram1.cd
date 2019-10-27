@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ObjectOrientedCollege.Teacher">
-    <Position X="13.25" Y="5" Width="1.5" />
+    <Position X="13.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACIAAAAgAAAAEAEAAAASAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
@@ -37,8 +37,8 @@
     <InheritanceLine Type="ObjectOrientedCollege.Employee" FixedToPoint="true">
       <Path>
         <Point X="14" Y="8.75" />
-        <Point X="14" Y="8.51" />
-        <Point X="16" Y="8.51" />
+        <Point X="14" Y="8.375" />
+        <Point X="16" Y="8.375" />
         <Point X="16" Y="6.877" />
       </Path>
     </InheritanceLine>
@@ -50,7 +50,7 @@
   <Class Name="ObjectOrientedCollege.StudentGroup">
     <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAIAAAACAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAAiEAAAIAIAAAACAAA=</HashCode>
       <FileName>StudentGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,7 @@
     <Position X="13.25" Y="2.25" Width="1.5" />
     <InheritanceLine Type="ObjectOrientedCollege.Teacher" ManuallyRouted="true">
       <Path>
-        <Point X="14" Y="5" />
+        <Point X="14" Y="4.75" />
         <Point X="14" Y="4.127" />
       </Path>
     </InheritanceLine>
@@ -92,7 +92,7 @@
   <Class Name="ObjectOrientedCollege.College">
     <Position X="10.75" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAQABAAAAAAAgBCAAAAAAAAIkAAAAAAIAABACAAI=</HashCode>
+      <HashCode>AAAAAQABAAAAAAAgBCAAAAAEAAIkAAAAAAIAABACAAI=</HashCode>
       <FileName>College.cs</FileName>
     </TypeIdentifier>
   </Class>
