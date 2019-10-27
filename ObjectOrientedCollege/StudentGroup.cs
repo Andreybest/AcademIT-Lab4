@@ -9,6 +9,9 @@ namespace ObjectOrientedCollege
     {
         private List<Student> students = new List<Student>();
         public List<Student> Students { get => students; private set => students = value; }
+        private Student groupLeader;
+        public Student GroupLeader { get => groupLeader; private set => groupLeader = value; }
+
         public readonly int groupNumber;
 
         public StudentGroup(int groupNumber)
@@ -21,6 +24,8 @@ namespace ObjectOrientedCollege
             Students.Add(student);
         }
 
+
+        public const string noGroupHeadman = "This group dosen't have headman, please assign one in order to use this function.";
         public override string ToString()
         {
             for (int i = 0; i < Students.Count; i++)
@@ -30,7 +35,7 @@ namespace ObjectOrientedCollege
                     return $"Group {groupNumber} students:\n" + headman.CreateGroupRaport(Students);
                 }
             }
-            return "This group dosen't have headman, please assign one in order to use this function.";
+            return noGroupHeadman;
         }
     }
 }

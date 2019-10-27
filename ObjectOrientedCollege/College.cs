@@ -9,11 +9,11 @@ namespace ObjectOrientedCollege
     {
         public readonly string name;
         public readonly string address;
-        private List<Student> students = new List<Student>();
-        private List<Teacher> teachers = new List<Teacher>();
-        private List<StudentGroup> studentGroups = new List<StudentGroup>();
-        private List<Audience> audiences = new List<Audience>();
-        private List<Technician> technicians = new List<Technician>();
+        public List<Student> students = new List<Student>();
+        public List<Teacher> teachers = new List<Teacher>();
+        public List<StudentGroup> studentGroups = new List<StudentGroup>();
+        public List<Audience> audiences = new List<Audience>();
+        public List<Technician> technicians = new List<Technician>();
 
         public College(string name, string address)
         {
@@ -73,6 +73,11 @@ namespace ObjectOrientedCollege
         {
             Technician technician = new Technician(firstName, lastName, age, phoneNumber, salary);
             technicians.Add(technician);
+        }
+
+        public void Payday()
+        {
+
         }
     }
 }

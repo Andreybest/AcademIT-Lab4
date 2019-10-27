@@ -86,7 +86,7 @@ namespace ObjectOrientedCollege
         }
 
         private const int minSelfStudyResult = -2;
-        private const int maxSelfStudyResult = 10;
+        private const int maxSelfStudyResult = 15;
         public void SelfStudy()
         {
             KnowlageProgress += rand.Next(minSelfStudyResult, maxSelfStudyResult);
