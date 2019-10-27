@@ -7,13 +7,16 @@ namespace ObjectOrientedCollege
 {
     public class DepartmentHead : Teacher
     {
-        private List<Teacher> subordinate;
+        private List<Teacher> subordinate = new List<Teacher>();
 
-        public DepartmentHead(string firstName, string lastName, int age, string phoneNumber, int salary, int practiceLevel, string subject) : base(firstName, lastName, age, phoneNumber, salary, practiceLevel, subject) { }
+        public DepartmentHead(string firstName, string lastName, int age, string phoneNumber, int salary, int knowlageLevel, string subject) : base(firstName, lastName, age, phoneNumber, salary, knowlageLevel, subject) { }
 
-        public void TrainTeachers(List<Teacher> teachers)
+        public void TrainSubordinates()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < subordinate.Capacity; i++)
+            {
+                subordinate[i].KnowlageLevel++;
+            }
         }
     }
 }

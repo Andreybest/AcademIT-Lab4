@@ -7,7 +7,7 @@ namespace ObjectOrientedCollege
 {
     public abstract class Employee : Human, IMoneyGetting
     {
-        protected int salary;
+        public int salary;
 
         public Employee(string firstName, string lastName, int age, string phoneNumber, int salary) : base(firstName, lastName, age, phoneNumber)
         {
@@ -16,7 +16,7 @@ namespace ObjectOrientedCollege
 
         public void MakeMoney()
         {
-
+            moneyAmount += salary;
         }
     }
 }

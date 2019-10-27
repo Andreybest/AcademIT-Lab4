@@ -7,18 +7,39 @@ namespace ObjectOrientedCollege
 {
     public class Teacher : Employee
     {
-        protected int practiceLevel;
-        protected string subject;
+        Random rand = new Random();
 
-        public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, int practiceLevel, string subject) : base(firstName, lastName, age, phoneNumber, salary)
+        protected int knowlageLevel;
+        public int KnowlageLevel
         {
-            this.practiceLevel = practiceLevel;
+            get => knowlageLevel;
+            set
+            {
+                if (Enum.IsDefined(typeof(EKnowlageLevel), value))
+                {
+                    knowlageLevel = value;
+                }
+            }
+        }
+        public readonly string subject;
+
+        const int knowlagePerLesson = 5;
+
+        public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, int knowlageLevel, string subject) : base(firstName, lastName, age, phoneNumber, salary)
+        {
+            KnowlageLevel = knowlageLevel;
             this.subject = subject;
         }
 
-        public void Teach(Student student)
+        const int minRandomKnowlage = 0;
+        const int maxRandomKnowlage = 3;
+        public void TeachGroup(List<Student> students, Audience audience)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < students.Count; i++)
+            {
+                students[i].KnowlageProgress += knowlagePerLesson * KnowlageLevel * rand.Next(minRandomKnowlage, maxRandomKnowlage) * (audience.Clearness / Audience.maxClearness);
+            }
+            audience.Clearness -= 30;
         }
     }
 }

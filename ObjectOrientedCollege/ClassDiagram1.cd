@@ -1,65 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ObjectOrientedCollege.Student">
-    <Position X="8.75" Y="6.25" Width="1.5" />
+    <Position X="8.5" Y="6.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="ObjectOrientedCollege.Student.MoneyEarn" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Student.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>QAAACACAAAAAAAAAAAAAAAAAIAAAAAAACgEAAAAAAAA=</HashCode>
+      <HashCode>QIAACICAAAggAAAEAAAgAAQAKAABAAAABgEAABAEAgA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ObjectOrientedCollege.Teacher">
-    <Position X="13.25" Y="5.25" Width="1.5" />
+    <Position X="13.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAACAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACIAAAAgAAAAEAEAAAASAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Headman">
     <Position X="8.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Headman.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ObjectOrientedCollege.AdminStaff">
-    <Position X="11.25" Y="5.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AdminStaff.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ObjectOrientedCollege.Technician">
-    <Position X="15.25" Y="5.25" Width="1.5" />
+    <Position X="15.25" Y="5" Width="1.5" />
     <InheritanceLine Type="ObjectOrientedCollege.Employee" FixedToPoint="true">
       <Path>
-        <Point X="12" Y="8" />
-        <Point X="12" Y="7.694" />
-        <Point X="16" Y="7.694" />
-        <Point X="16" Y="6.675" />
+        <Point X="14" Y="8.75" />
+        <Point X="14" Y="8.51" />
+        <Point X="16" Y="8.51" />
+        <Point X="16" Y="6.877" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Technician.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.StudentGroup">
-    <Position X="5" Y="5.5" Width="1.5" />
+    <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAIAAAACAAA=</HashCode>
       <FileName>StudentGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Human">
-    <Position X="8.75" Y="10" Width="1.5" />
+    <Position X="8.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABARAAAAAAAAAAAAEAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Employee">
-    <Position X="11.25" Y="8" Width="1.5" />
+    <Position X="13.25" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Employee.cs</FileName>
@@ -67,41 +70,41 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ObjectOrientedCollege.Audience">
-    <Position X="16" Y="3" Width="1.5" />
+    <Position X="15.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAQBAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Audience.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.DepartmentHead">
-    <Position X="13.25" Y="3" Width="1.5" />
+    <Position X="13.25" Y="2.25" Width="1.5" />
     <InheritanceLine Type="ObjectOrientedCollege.Teacher" ManuallyRouted="true">
       <Path>
-        <Point X="14" Y="5.25" />
-        <Point X="14" Y="4.877" />
+        <Point X="14" Y="5" />
+        <Point X="14" Y="4.127" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>DepartmentHead.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.College">
-    <Position X="10.5" Y="1.75" Width="2.25" />
+    <Position X="10.75" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACAAI=</HashCode>
+      <HashCode>AAAAAQABAAAAAAAgBCAAAAAAAAIkAAAAAAIAABACAAI=</HashCode>
       <FileName>College.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ObjectOrientedCollege.IMoneyGetting">
-    <Position X="5" Y="3.75" Width="1.5" />
+    <Position X="7.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>IMoneyGetting.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ObjectOrientedCollege.EKnowlageLevel">
-    <Position X="7" Y="2.5" Width="1.5" />
+    <Position X="6.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgEAI=</HashCode>
       <FileName>EKnowlageLevel.cs</FileName>

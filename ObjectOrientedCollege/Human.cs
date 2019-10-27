@@ -7,11 +7,11 @@ namespace ObjectOrientedCollege
 {
     public abstract class Human
     {
-        protected string firstName;
-        protected string lastName;
-        protected int age;
-        protected string phoneNumber;
-        protected int moneyAmount = 0;
+        public readonly string firstName;
+        public readonly string lastName;
+        public readonly int age;
+        public readonly string phoneNumber;
+        public int moneyAmount = 0;
 
         public Human(string firstName, string lastName, int age, string phoneNumber)
         {

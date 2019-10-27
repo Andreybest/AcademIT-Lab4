@@ -7,17 +7,23 @@ namespace ObjectOrientedCollege
 {
     public class Headman : Student
     {
+        public int CountHeadmans { get; private set; } = 0;
 
-        public static int CountHeadmans = 0;
+        const int minScholarship = 1500;
 
-        public Headman(string firstName, string lastName, int age, string phoneNumber, int group, int knowlageLevel) : base(firstName, lastName, age, phoneNumber, group, knowlageLevel)
+        public Headman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = minScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel)
         {
             CountHeadmans++;
         }
 
-        public void CreateRaport()
+        public string CreateGroupRaport(List<Student> students)
         {
-            throw new System.NotImplementedException();
+            string studentsInfo = "";
+            for (int i = 0; i < students.Count; i++)
+            {
+                studentsInfo += $"{students[i].ToString()}\n";
+            }
+            return studentsInfo;
         }
     }
 }
