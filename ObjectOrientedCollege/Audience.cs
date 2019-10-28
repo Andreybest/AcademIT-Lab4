@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ObjectOrientedCollege
 {
@@ -15,7 +12,14 @@ namespace ObjectOrientedCollege
             get => clearness;
             set
             {
-                clearness = Math.Min(maxClearness, value);
+                if (value < 0)
+                {
+                    clearness = 0;
+                }
+                else
+                {
+                    clearness = Math.Min(maxClearness, value);
+                }
             }
         }
 

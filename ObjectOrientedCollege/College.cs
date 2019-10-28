@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ObjectOrientedCollege
 {
@@ -49,9 +46,9 @@ namespace ObjectOrientedCollege
             studentGroups.Add(studentGroup);
         }
 
-        public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, int knowlageLevel, string subject)
+        public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
         {
-            Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, knowlageLevel, subject);
+            Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, subject);
             teachers.Add(teacher);
         }
 
@@ -96,7 +93,18 @@ namespace ObjectOrientedCollege
 
         public void Payday()
         {
-
+            for (int i = 0; i < students.Count; i++)
+            {
+                students[i].MakeMoney();
+            }
+            for (int i = 0; i < teachers.Count; i++)
+            {
+                teachers[i].MakeMoney();
+            }
+            for (int i = 0; i < technicians.Count; i++)
+            {
+                technicians[i].MakeMoney();
+            }
         }
     }
 }

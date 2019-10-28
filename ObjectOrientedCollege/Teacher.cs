@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ObjectOrientedCollege
 {
@@ -9,35 +6,22 @@ namespace ObjectOrientedCollege
     {
         Random rand = new Random();
 
-        protected int knowlageLevel;
-        public int KnowlageLevel
-        {
-            get => knowlageLevel;
-            set
-            {
-                if (Enum.IsDefined(typeof(EKnowlageLevel), value))
-                {
-                    knowlageLevel = value;
-                }
-            }
-        }
         public readonly string subject;
 
-        const int knowlagePerLesson = 5;
+        const float knowlagePerLesson = 15f;
 
-        public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, int knowlageLevel, string subject) : base(firstName, lastName, age, phoneNumber, salary)
+        public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject) : base(firstName, lastName, age, phoneNumber, salary)
         {
-            KnowlageLevel = knowlageLevel;
             this.subject = subject;
         }
 
-        const int minRandomKnowlage = 0;
+        const int minRandomKnowlage = 1;
         const int maxRandomKnowlage = 3;
-        public void TeachGroup(List<Student> students, Audience audience)
+        public void TeachGroup(StudentGroup group, Audience audience)
         {
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < group.Students.Count; i++)
             {
-                students[i].KnowlageProgress += knowlagePerLesson * KnowlageLevel * rand.Next(minRandomKnowlage, maxRandomKnowlage) * (audience.Clearness / Audience.maxClearness) * (1 / students.Count);
+                group.Students[i].KnowlageProgress += knowlagePerLesson * (float)rand.Next(minRandomKnowlage, maxRandomKnowlage) * ((float)audience.Clearness / (float)Audience.maxClearness) * (1f / (float)group.Students.Count);
             }
             // Audience clearness decreased by 30 to imitate dirtyness after lesson.
             audience.Clearness -= 30;

@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ObjectOrientedCollege
@@ -93,6 +89,13 @@ namespace ObjectOrientedCollege
                     }
                 }
             }
+        }
+
+        private void buttonAddGroup_Click(object sender, EventArgs e)
+        {
+            AddGroupForm form = new AddGroupForm(college);
+            form.FormClosing += delegate { RedrawGrid(); };
+            form.Show();
         }
     }
 }

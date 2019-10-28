@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddHeadmanForm));
             this.comboBoxGroups = new System.Windows.Forms.ComboBox();
             this.labelGroup = new System.Windows.Forms.Label();
             this.buttonAddHeadman = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             // 
             // buttonAddHeadman
             // 
+            this.buttonAddHeadman.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddHeadman.Location = new System.Drawing.Point(129, 318);
             this.buttonAddHeadman.Name = "buttonAddHeadman";
             this.buttonAddHeadman.Size = new System.Drawing.Size(84, 23);
@@ -223,10 +225,12 @@
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.labelFirstName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddHeadmanForm";
-            this.Text = "AddHeadmanForm";
+            this.Text = "Add Headman";
             this.Load += new System.EventHandler(this.AddHeadmanForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

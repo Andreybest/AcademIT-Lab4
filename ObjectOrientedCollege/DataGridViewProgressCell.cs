@@ -116,7 +116,7 @@ namespace ObjectOrientedCollege
             {
 
                 // Рисование прогресса
-                g.FillRectangle(new SolidBrush(_ProgressBarColor), cellBounds.X + 2, cellBounds.Y + 2, Convert.ToInt32((percentage * cellBounds.Width * 0.8)), cellBounds.Height / 1 - 5);
+                g.FillRectangle(new SolidBrush(_ProgressBarColor), cellBounds.X + 2, cellBounds.Y + 2, Convert.ToInt32((percentage * cellBounds.Width * 0.95)), cellBounds.Height / 1 - 5);
                 // Рисование текста
                 g.DrawString(progressVal.ToString() + "%", cellStyle.Font, foreColorBrush, posX, posY);
             }

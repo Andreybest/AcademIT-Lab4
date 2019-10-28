@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAudienceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAudienceForm.Designer.cs">
+      <DependentUpon>AddAudienceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroupForm.Designer.cs">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddHeadmanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +70,34 @@
     <Compile Include="AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTeacherForm.Designer.cs">
+      <DependentUpon>AddTeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTechnicianForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTechnicianForm.Designer.cs">
+      <DependentUpon>AddTechnicianForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminStaff.cs" />
     <Compile Include="Audience.cs" />
+    <Compile Include="AudiencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AudiencesForm.Designer.cs">
+      <DependentUpon>AudiencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboboxAudienceItem.cs" />
+    <Compile Include="ComboboxGroupItem.cs" />
+    <Compile Include="ComboboxTeacherItem.cs" />
+    <Compile Include="ComboboxTechicianItem.cs" />
     <Compile Include="DataGridViewProgressCell.cs" />
     <Compile Include="DataGridViewProgressColumn.cs" />
     <Compile Include="ExistingNumerationException.cs" />
     <Compile Include="College.cs" />
-    <Compile Include="DepartmentHead.cs" />
     <Compile Include="EKnowlageLevel.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="GroupsForm.cs">
@@ -79,11 +112,23 @@
     <Compile Include="MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffForm.Designer.cs">
+      <DependentUpon>StaffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentsForm.Designer.cs">
       <DependentUpon>StudentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartLessonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartLessonForm.Designer.cs">
+      <DependentUpon>StartLessonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TemplateForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +145,26 @@
     <Compile Include="StudentGroup.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Technician.cs" />
+    <EmbeddedResource Include="AddAudienceForm.resx">
+      <DependentUpon>AddAudienceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGroupForm.resx">
+      <DependentUpon>AddGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddHeadmanForm.resx">
       <DependentUpon>AddHeadmanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTeacherForm.resx">
+      <DependentUpon>AddTeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTechnicianForm.resx">
+      <DependentUpon>AddTechnicianForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudiencesForm.resx">
+      <DependentUpon>AudiencesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupsForm.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
@@ -112,8 +172,14 @@
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StaffForm.resx">
+      <DependentUpon>StaffForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentsForm.resx">
       <DependentUpon>StudentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartLessonForm.resx">
+      <DependentUpon>StartLessonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TemplateForm.resx">
       <DependentUpon>TemplateForm.cs</DependentUpon>

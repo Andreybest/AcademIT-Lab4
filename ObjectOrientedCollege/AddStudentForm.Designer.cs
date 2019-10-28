@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudentForm));
             this.labelFirstName = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -41,10 +42,10 @@
             this.labelScholarship = new System.Windows.Forms.Label();
             this.textBoxKnowlageLevel = new System.Windows.Forms.TextBox();
             this.labelKnowlageLevel = new System.Windows.Forms.Label();
-            this.labelNote = new System.Windows.Forms.Label();
             this.buttonAddStudent = new System.Windows.Forms.Button();
             this.labelGroup = new System.Windows.Forms.Label();
             this.comboBoxGroups = new System.Windows.Forms.ComboBox();
+            this.labelNote = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelFirstName
@@ -162,18 +163,9 @@
             this.labelKnowlageLevel.TabIndex = 13;
             this.labelKnowlageLevel.Text = "Knowlage Level*:";
             // 
-            // labelNote
-            // 
-            this.labelNote.AutoSize = true;
-            this.labelNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelNote.Location = new System.Drawing.Point(107, 359);
-            this.labelNote.Name = "labelNote";
-            this.labelNote.Size = new System.Drawing.Size(128, 16);
-            this.labelNote.TabIndex = 15;
-            this.labelNote.Text = "* - unnecesary fields";
-            // 
             // buttonAddStudent
             // 
+            this.buttonAddStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddStudent.Location = new System.Drawing.Point(133, 318);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(75, 23);
@@ -201,6 +193,16 @@
             this.comboBoxGroups.Size = new System.Drawing.Size(100, 21);
             this.comboBoxGroups.TabIndex = 18;
             // 
+            // labelNote
+            // 
+            this.labelNote.AutoSize = true;
+            this.labelNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelNote.Location = new System.Drawing.Point(107, 359);
+            this.labelNote.Name = "labelNote";
+            this.labelNote.Size = new System.Drawing.Size(128, 16);
+            this.labelNote.TabIndex = 15;
+            this.labelNote.Text = "* - unnecesary fields";
+            // 
             // AddStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,10 +226,11 @@
             this.Controls.Add(this.textBoxFirstName);
             this.Controls.Add(this.labelFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddStudentForm";
-            this.Text = "AddStudentForm";
+            this.Text = "Add Student";
             this.Load += new System.EventHandler(this.AddStudentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -249,9 +252,9 @@
         private System.Windows.Forms.Label labelScholarship;
         private System.Windows.Forms.TextBox textBoxKnowlageLevel;
         private System.Windows.Forms.Label labelKnowlageLevel;
-        private System.Windows.Forms.Label labelNote;
         private System.Windows.Forms.Button buttonAddStudent;
         private System.Windows.Forms.Label labelGroup;
         private System.Windows.Forms.ComboBox comboBoxGroups;
+        private System.Windows.Forms.Label labelNote;
     }
 }

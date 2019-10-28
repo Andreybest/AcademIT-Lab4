@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsForm));
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,6 +148,7 @@
             // 
             // buttonAddStudent
             // 
+            this.buttonAddStudent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAddStudent.Location = new System.Drawing.Point(769, 9);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(84, 27);
@@ -161,8 +163,9 @@
             this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.buttonAddStudent);
             this.Controls.Add(this.dataGridViewStudents);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StudentsForm";
-            this.Text = "StudentsFrom";
+            this.Text = "Students Panel";
             this.Controls.SetChildIndex(this.labelTitle, 0);
             this.Controls.SetChildIndex(this.dataGridViewStudents, 0);
             this.Controls.SetChildIndex(this.buttonAddStudent, 0);

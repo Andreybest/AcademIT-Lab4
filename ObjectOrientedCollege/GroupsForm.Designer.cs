@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GroupsForm));
             this.dataGridViewGroups = new System.Windows.Forms.DataGridView();
             this.groupNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.headman = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createRaportButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addHeadmanButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.buttonAddGroup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,14 +103,29 @@
             this.addHeadmanButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.addHeadmanButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // buttonAddGroup
+            // 
+            this.buttonAddGroup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddGroup.Location = new System.Drawing.Point(797, 11);
+            this.buttonAddGroup.Name = "buttonAddGroup";
+            this.buttonAddGroup.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddGroup.TabIndex = 4;
+            this.buttonAddGroup.Text = "Add Group";
+            this.buttonAddGroup.UseVisualStyleBackColor = true;
+            this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
+            // 
             // GroupsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonAddGroup);
             this.Controls.Add(this.dataGridViewGroups);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GroupsForm";
+            this.Text = "Groups Panel";
             this.Controls.SetChildIndex(this.labelTitle, 0);
             this.Controls.SetChildIndex(this.dataGridViewGroups, 0);
+            this.Controls.SetChildIndex(this.buttonAddGroup, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,5 +140,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn studentAmount;
         private System.Windows.Forms.DataGridViewButtonColumn createRaportButton;
         private System.Windows.Forms.DataGridViewButtonColumn addHeadmanButton;
+        private System.Windows.Forms.Button buttonAddGroup;
     }
 }

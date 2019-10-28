@@ -1,22 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ObjectOrientedCollege
 {
     public partial class MainMenuForm : Form
     {
-
-        //Student human = new Student("Valerka", "Zhmishak", 23, "+3805454343", 2, 1500);
-        //Headman headman = new Headman("Valerkovna", "Zhmishak", 23, "+3548945854", 2, 2000);
-        public College college = new College("College Tem wants to attend :3", "Depressito land");
-        int clickAmounts = 0;
+        public College college = new College("PPK", "Despacito land");
 
         public MainMenuForm()
         {
@@ -25,12 +14,11 @@ namespace ObjectOrientedCollege
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            college.AddGroup(25);
-            college.AddGroup(35);
-            college.AddStudent("Valerka", "Zhmishak", 18, "+3805454343", 35, 1500);
+            labelCollegeName.Text = college.name;
+            labelAddress.Text = college.address;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonStudents_Click(object sender, EventArgs e)
         {
             StudentsForm frm = new StudentsForm(college)
             {
@@ -42,7 +30,7 @@ namespace ObjectOrientedCollege
             this.Hide();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonGroups_Click(object sender, EventArgs e)
         {
             GroupsForm frm = new GroupsForm(college)
             {
@@ -52,6 +40,36 @@ namespace ObjectOrientedCollege
             frm.FormClosing += delegate { this.Show(); };
             frm.Show();
             this.Hide();
+        }
+
+        private void buttonAudiences_Click(object sender, EventArgs e)
+        {
+            AudiencesForm frm = new AudiencesForm(college)
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+        }
+
+        private void buttonStaff_Click(object sender, EventArgs e)
+        {
+            StaffForm frm = new StaffForm(college)
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+        }
+
+        private void buttonPayday_Click(object sender, EventArgs e)
+        {
+            college.Payday();
+            MessageBox.Show("Everyone got a money check!");
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ObjectOrientedCollege
 {
@@ -9,7 +6,7 @@ namespace ObjectOrientedCollege
     {
         public int CountHeadmans { get; private set; } = 0;
 
-        const int minScholarship = 1500;
+        public new const int minScholarship = 1500;
 
         public Headman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = minScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel)
         {
