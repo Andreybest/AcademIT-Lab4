@@ -14,13 +14,7 @@ namespace ObjectOrientedCollege
         public StudentsForm(College college) : base(college)
         {
             InitializeComponent();
-            ShowConsole();
             RedrawGrid();
-        }
-        
-        private void ShowConsole()
-        {
-            Console.WriteLine(college.address);
         }
 
         public void RedrawGrid()

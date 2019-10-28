@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddHeadmanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHeadmanForm.Designer.cs">
+      <DependentUpon>AddHeadmanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,12 @@
     <Compile Include="DepartmentHead.cs" />
     <Compile Include="EKnowlageLevel.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="GroupsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupsForm.Designer.cs">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +100,14 @@
     <Compile Include="StudentGroup.cs" />
     <Compile Include="Teacher.cs" />
     <Compile Include="Technician.cs" />
+    <EmbeddedResource Include="AddHeadmanForm.resx">
+      <DependentUpon>AddHeadmanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupsForm.resx">
+      <DependentUpon>GroupsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>

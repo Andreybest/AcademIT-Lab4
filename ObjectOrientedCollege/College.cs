@@ -69,6 +69,25 @@ namespace ObjectOrientedCollege
             }
         }
 
+        public bool AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.minScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
+        {
+            for (int i = 0; i < studentGroups.Count; i++)
+            {
+                if (studentGroups[i].groupNumber == group)
+                {
+                    if (!studentGroups[i].GroupHeadmanExists())
+                    {
+                        Headman headman = new Headman(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
+                        studentGroups[i].AddStudent(headman);
+                        students.Add(headman);
+                        studentGroups[i].AddHeadman(headman);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public void AddTechnician(string firstName, string lastName, int age, string phoneNumber, int salary)
         {
             Technician technician = new Technician(firstName, lastName, age, phoneNumber, salary);

@@ -94,7 +94,7 @@ namespace ObjectOrientedCollege
 
         public override string ToString()
         {
-            return $"Name: {lastName} {firstName} Age: {age} Phone number: {phoneNumber}";
+            return $"Name: {firstName} {lastName} Age: {age} Phone number: {phoneNumber}";
         }
     }
 }

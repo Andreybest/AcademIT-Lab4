@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            this.buttonAddStudent = new System.Windows.Forms.Button();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +39,15 @@
             this.knowlageLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.knowlageProgress = new ObjectOrientedCollege.DataGridViewProgressColumn();
             this.studyButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.buttonAddStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Location = new System.Drawing.Point(395, 6);
+            this.labelTitle.Size = new System.Drawing.Size(129, 33);
+            this.labelTitle.Text = "Students";
             // 
             // dataGridViewStudents
             // 
@@ -68,16 +74,6 @@
             this.dataGridViewStudents.Size = new System.Drawing.Size(853, 349);
             this.dataGridViewStudents.TabIndex = 2;
             this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
-            // 
-            // buttonAddStudent
-            // 
-            this.buttonAddStudent.Location = new System.Drawing.Point(769, 9);
-            this.buttonAddStudent.Name = "buttonAddStudent";
-            this.buttonAddStudent.Size = new System.Drawing.Size(84, 27);
-            this.buttonAddStudent.TabIndex = 3;
-            this.buttonAddStudent.Text = "Add Student";
-            this.buttonAddStudent.UseVisualStyleBackColor = true;
-            this.buttonAddStudent.Click += new System.EventHandler(this.buttonAddStudent_Click);
             // 
             // firstName
             // 
@@ -149,6 +145,16 @@
             this.studyButton.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.studyButton.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // buttonAddStudent
+            // 
+            this.buttonAddStudent.Location = new System.Drawing.Point(769, 9);
+            this.buttonAddStudent.Name = "buttonAddStudent";
+            this.buttonAddStudent.Size = new System.Drawing.Size(84, 27);
+            this.buttonAddStudent.TabIndex = 3;
+            this.buttonAddStudent.Text = "Add Student";
+            this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.buttonAddStudent_Click);
+            // 
             // StudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +163,7 @@
             this.Controls.Add(this.dataGridViewStudents);
             this.Name = "StudentsForm";
             this.Text = "StudentsFrom";
+            this.Controls.SetChildIndex(this.labelTitle, 0);
             this.Controls.SetChildIndex(this.dataGridViewStudents, 0);
             this.Controls.SetChildIndex(this.buttonAddStudent, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();

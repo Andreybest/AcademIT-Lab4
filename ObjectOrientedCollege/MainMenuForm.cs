@@ -25,7 +25,6 @@ namespace ObjectOrientedCollege
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //label1.Text = Student.CountStudents.ToString();
             college.AddGroup(25);
             college.AddGroup(35);
             college.AddStudent("Valerka", "Zhmishak", 18, "+3805454343", 35, 1500);
@@ -33,12 +32,19 @@ namespace ObjectOrientedCollege
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //clickAmounts++;
-            //if (clickAmounts == 10)
-            //{
-            //    label1.Text = "DESPACITO SANS";
-            //}
             StudentsForm frm = new StudentsForm(college)
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            GroupsForm frm = new GroupsForm(college)
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual

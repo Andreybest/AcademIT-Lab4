@@ -10,31 +10,34 @@ using System.Windows.Forms;
 
 namespace ObjectOrientedCollege
 {
-    public partial class AddStudentForm : Form
+    public partial class AddHeadmanForm : Form
     {
         protected College college;
+        private int group;
 
-        public AddStudentForm(College college)
+        public AddHeadmanForm(College college, int group)
         {
             InitializeComponent();
             this.college = college;
+            this.group = group;
         }
 
-        private void AddStudentForm_Load(object sender, EventArgs e)
+        private void AddHeadmanForm_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < college.studentGroups.Count; i++)
             {
                 comboBoxGroups.Items.Add(college.studentGroups[i].groupNumber);
             }
+            comboBoxGroups.SelectedIndex = comboBoxGroups.FindStringExact(group.ToString());
         }
 
-        private void buttonAddStudent_Click(object sender, EventArgs e)
+        private void buttonAddHeadman_Click(object sender, EventArgs e)
         {
             if (textBoxFirstName.Text != "" && textBoxLastName.Text != "" && textBoxAge.Text != "" && textBoxPhoneNumber.Text != "" && comboBoxGroups.Text != "" && textBoxScholarship.Text != "" && textBoxKnowlageLevel.Text != "")
             {
                 if (CheckKnowlageLevel(Int32.Parse(textBoxKnowlageLevel.Text.ToString())))
                 {
-                    college.AddStudent(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), Int32.Parse(textBoxScholarship.Text.ToString()), Int32.Parse(textBoxKnowlageLevel.Text.ToString()));
+                    college.AddHeadman(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), Int32.Parse(textBoxScholarship.Text.ToString()), Int32.Parse(textBoxKnowlageLevel.Text.ToString()));
                     Close();
                 }
                 else
@@ -44,14 +47,14 @@ namespace ObjectOrientedCollege
             }
             else if (textBoxFirstName.Text != "" && textBoxLastName.Text != "" && textBoxAge.Text != "" && textBoxPhoneNumber.Text != "" && comboBoxGroups.Text != "" && textBoxScholarship.Text != "")
             {
-                college.AddStudent(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), Int32.Parse(textBoxScholarship.Text.ToString()));
+                college.AddHeadman(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), Int32.Parse(textBoxScholarship.Text.ToString()));
                 Close();
             }
             else if (textBoxFirstName.Text != "" && textBoxLastName.Text != "" && textBoxAge.Text != "" && textBoxPhoneNumber.Text != "" && comboBoxGroups.Text != "" && textBoxKnowlageLevel.Text != "")
             {
                 if (CheckKnowlageLevel(Int32.Parse(textBoxKnowlageLevel.Text.ToString())))
                 {
-                    college.AddStudent(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), knowlageLevel: Int32.Parse(textBoxKnowlageLevel.Text.ToString()));
+                    college.AddHeadman(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()), knowlageLevel: Int32.Parse(textBoxKnowlageLevel.Text.ToString()));
                     Close();
                 }
                 else
@@ -61,7 +64,7 @@ namespace ObjectOrientedCollege
             }
             else if (textBoxFirstName.Text != "" && textBoxLastName.Text != "" && textBoxAge.Text != "" && textBoxPhoneNumber.Text != "" && comboBoxGroups.Text != "")
             {
-                college.AddStudent(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()));
+                college.AddHeadman(textBoxFirstName.Text.ToString(), textBoxLastName.Text.ToString(), Int32.Parse(textBoxAge.Text.ToString()), textBoxPhoneNumber.Text.ToString(), Int32.Parse(comboBoxGroups.Text.ToString()));
                 Close();
             }
             else
