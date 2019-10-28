@@ -14,7 +14,7 @@
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>QIAACICAAAggAAAEAAAgAAQAKAABAAAABgEAABAEAgA=</HashCode>
-      <FileName>Student.cs</FileName>
+      <FileName>Classes\Student.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -22,14 +22,14 @@
     <Position X="11.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAAEAEAAAASAAAAAAAAAACAAAAAAAAA=</HashCode>
-      <FileName>Teacher.cs</FileName>
+      <FileName>Classes\Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Headman">
     <Position X="8.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Headman.cs</FileName>
+      <FileName>Classes\Headman.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Technician">
@@ -44,28 +44,28 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Technician.cs</FileName>
+      <FileName>Classes\Technician.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.StudentGroup">
     <Position X="6.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAQAAAAEAAAEAQAAAAAAAAACEAAAAAIAAAAiAAA=</HashCode>
-      <FileName>StudentGroup.cs</FileName>
+      <FileName>Classes\StudentGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Human">
     <Position X="8.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABARAAAAAAAAAAAAEAAAAAAAAAACAAAAAA=</HashCode>
-      <FileName>Human.cs</FileName>
+      <FileName>Classes\Human.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.Employee">
     <Position X="11.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>Employee.cs</FileName>
+      <FileName>Classes\Employee.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -73,112 +73,112 @@
     <Position X="12.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAQBAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Audience.cs</FileName>
+      <FileName>Classes\Audience.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.College">
     <Position X="15.5" Y="8" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAQABAAAAAAAgBCAAAAAEAAIkAAAAAAIAABAiAAI=</HashCode>
-      <FileName>College.cs</FileName>
+      <FileName>Classes\College.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.TemplateForm" Collapsed="true">
     <Position X="24.5" Y="8" Width="2" />
     <TypeIdentifier>
       <HashCode>CAAABAAAACAACBAAAACAAAAKAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TemplateForm.cs</FileName>
+      <FileName>Forms\TemplateForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.StudentsForm" Collapsed="true">
     <Position X="20.5" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>QAAACACAQCBARAAAAACAAAACIEAIAAAgIAAACAAAAAA=</HashCode>
-      <FileName>StudentsForm.cs</FileName>
+      <FileName>Forms\Panels\StudentsForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.GroupsForm" Collapsed="true">
     <Position X="23.25" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAQABCAAAEAAAACIAAgDgAAKAAAAIAAAAAAAAAA=</HashCode>
-      <FileName>GroupsForm.cs</FileName>
+      <FileName>Forms\Panels\GroupsForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AudiencesForm" Collapsed="true">
     <Position X="26" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAgQACCAQACAEAAIEIgIAAAAAIAAAA=</HashCode>
-      <FileName>AudiencesForm.cs</FileName>
+      <FileName>Forms\Panels\AudiencesForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.StaffForm" Collapsed="true">
     <Position X="28.75" Y="6" Width="2" />
     <TypeIdentifier>
       <HashCode>AIQAIgGAESBgCAAAEACIACACAAIBEACIABiUAAAAAYA=</HashCode>
-      <FileName>StaffForm.cs</FileName>
+      <FileName>Forms\Panels\StaffForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AddStudentForm" Collapsed="true">
     <Position X="20.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQABgAAECSACBhAAACAAABDBMAAgABgAAFAAAAAIAA=</HashCode>
-      <FileName>AddStudentForm.cs</FileName>
+      <FileName>Forms\Popups\AddStudentForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AddGroupForm" Collapsed="true">
     <Position X="23.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAACAAAFBAAAGAAAACAEAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AddGroupForm.cs</FileName>
+      <FileName>Forms\Popups\AddGroupForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AddAudienceForm" Collapsed="true">
     <Position X="26.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAABAQAACAAABBAQACAAAACAAAAgAAAFAAQAAIAAAA=</HashCode>
-      <FileName>AddAudienceForm.cs</FileName>
+      <FileName>Forms\Popups\AddAudienceForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AddTeacherForm" Collapsed="true">
     <Position X="29" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACBBAAAESSAABBAAACAAABCAAAAgABIAAEAAQAAIAA=</HashCode>
-      <FileName>AddTeacherForm.cs</FileName>
+      <FileName>Forms\Popups\AddTeacherForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.AddTechnicianForm" Collapsed="true">
     <Position X="31.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABBAGAECSAABBAAACAAABCAAAAgABAAAEAAQAAIAA=</HashCode>
-      <FileName>AddTechnicianForm.cs</FileName>
+      <FileName>Forms\Popups\AddTechnicianForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.StartLessonForm" Collapsed="true">
     <Position X="31.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAABAAAgGAQABAAAACAAABCBCAAgAAAAEAAAAAAAgA=</HashCode>
-      <FileName>StartLessonForm.cs</FileName>
+      <FileName>Forms\Popups\StartLessonForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ObjectOrientedCollege.MainMenuForm" Collapsed="true">
     <Position X="24" Y="9.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AQIQhAAAACIAQBBBAAGAAAAGAAAAQQAAAAQAAAAAAAA=</HashCode>
-      <FileName>MainMenuForm.cs</FileName>
+      <FileName>Forms\MainMenuForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ObjectOrientedCollege.IMoneyGetting">
     <Position X="10.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
-      <FileName>IMoneyGetting.cs</FileName>
+      <FileName>Interfaces\IMoneyGetting.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="ObjectOrientedCollege.EKnowlageLevel">
     <Position X="6.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgEAI=</HashCode>
-      <FileName>EKnowlageLevel.cs</FileName>
+      <FileName>Enumerations\EKnowlageLevel.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

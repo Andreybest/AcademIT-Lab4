@@ -46,142 +46,141 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddAudienceForm.cs">
+    <Compile Include="Forms\Popups\AddAudienceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAudienceForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddAudienceForm.Designer.cs">
       <DependentUpon>AddAudienceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddGroupForm.cs">
+    <Compile Include="Forms\Popups\AddGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddGroupForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddGroupForm.Designer.cs">
       <DependentUpon>AddGroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddHeadmanForm.cs">
+    <Compile Include="Forms\Popups\AddHeadmanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddHeadmanForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddHeadmanForm.Designer.cs">
       <DependentUpon>AddHeadmanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddStudentForm.cs">
+    <Compile Include="Forms\Popups\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStudentForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTeacherForm.cs">
+    <Compile Include="Forms\Popups\AddTeacherForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTeacherForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddTeacherForm.Designer.cs">
       <DependentUpon>AddTeacherForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddTechnicianForm.cs">
+    <Compile Include="Forms\Popups\AddTechnicianForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddTechnicianForm.Designer.cs">
+    <Compile Include="Forms\Popups\AddTechnicianForm.Designer.cs">
       <DependentUpon>AddTechnicianForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminStaff.cs" />
-    <Compile Include="Audience.cs" />
-    <Compile Include="AudiencesForm.cs">
+    <Compile Include="Classes\Audience.cs" />
+    <Compile Include="Forms\Panels\AudiencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AudiencesForm.Designer.cs">
+    <Compile Include="Forms\Panels\AudiencesForm.Designer.cs">
       <DependentUpon>AudiencesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComboboxAudienceItem.cs" />
-    <Compile Include="ComboboxGroupItem.cs" />
-    <Compile Include="ComboboxTeacherItem.cs" />
-    <Compile Include="ComboboxTechicianItem.cs" />
-    <Compile Include="DataGridViewProgressCell.cs" />
-    <Compile Include="DataGridViewProgressColumn.cs" />
-    <Compile Include="ExistingNumerationException.cs" />
-    <Compile Include="College.cs" />
-    <Compile Include="EKnowlageLevel.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="GroupsForm.cs">
+    <Compile Include="ComboboxItems\ComboboxAudienceItem.cs" />
+    <Compile Include="ComboboxItems\ComboboxGroupItem.cs" />
+    <Compile Include="ComboboxItems\ComboboxTeacherItem.cs" />
+    <Compile Include="ComboboxItems\ComboboxTechicianItem.cs" />
+    <Compile Include="DataGridViewCustomElements\DataGridViewProgressCell.cs" />
+    <Compile Include="DataGridViewCustomElements\DataGridViewProgressColumn.cs" />
+    <Compile Include="Exceptions\ExistingNumerationException.cs" />
+    <Compile Include="Classes\College.cs" />
+    <Compile Include="Enumerations\EKnowlageLevel.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Forms\Panels\GroupsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupsForm.Designer.cs">
+    <Compile Include="Forms\Panels\GroupsForm.Designer.cs">
       <DependentUpon>GroupsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenuForm.cs">
+    <Compile Include="Forms\MainMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenuForm.Designer.cs">
+    <Compile Include="Forms\MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StaffForm.cs">
+    <Compile Include="Forms\Panels\StaffForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffForm.Designer.cs">
+    <Compile Include="Forms\Panels\StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentsForm.cs">
+    <Compile Include="Forms\Panels\StudentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentsForm.Designer.cs">
+    <Compile Include="Forms\Panels\StudentsForm.Designer.cs">
       <DependentUpon>StudentsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartLessonForm.cs">
+    <Compile Include="Forms\Popups\StartLessonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartLessonForm.Designer.cs">
+    <Compile Include="Forms\Popups\StartLessonForm.Designer.cs">
       <DependentUpon>StartLessonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TemplateForm.cs">
+    <Compile Include="Forms\TemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemplateForm.Designer.cs">
+    <Compile Include="Forms\TemplateForm.Designer.cs">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Headman.cs" />
-    <Compile Include="Human.cs" />
-    <Compile Include="IMoneyGetting.cs" />
+    <Compile Include="Classes\Headman.cs" />
+    <Compile Include="Classes\Human.cs" />
+    <Compile Include="Interfaces\IMoneyGetting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="StudentGroup.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="Technician.cs" />
-    <EmbeddedResource Include="AddAudienceForm.resx">
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Classes\StudentGroup.cs" />
+    <Compile Include="Classes\Teacher.cs" />
+    <Compile Include="Classes\Technician.cs" />
+    <EmbeddedResource Include="Forms\Popups\AddAudienceForm.resx">
       <DependentUpon>AddAudienceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddGroupForm.resx">
+    <EmbeddedResource Include="Forms\Popups\AddGroupForm.resx">
       <DependentUpon>AddGroupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddHeadmanForm.resx">
+    <EmbeddedResource Include="Forms\Popups\AddHeadmanForm.resx">
       <DependentUpon>AddHeadmanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddStudentForm.resx">
+    <EmbeddedResource Include="Forms\Popups\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTeacherForm.resx">
+    <EmbeddedResource Include="Forms\Popups\AddTeacherForm.resx">
       <DependentUpon>AddTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddTechnicianForm.resx">
+    <EmbeddedResource Include="Forms\Popups\AddTechnicianForm.resx">
       <DependentUpon>AddTechnicianForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AudiencesForm.resx">
+    <EmbeddedResource Include="Forms\Panels\AudiencesForm.resx">
       <DependentUpon>AudiencesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupsForm.resx">
+    <EmbeddedResource Include="Forms\Panels\GroupsForm.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenuForm.resx">
+    <EmbeddedResource Include="Forms\MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffForm.resx">
+    <EmbeddedResource Include="Forms\Panels\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentsForm.resx">
+    <EmbeddedResource Include="Forms\Panels\StudentsForm.resx">
       <DependentUpon>StudentsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartLessonForm.resx">
+    <EmbeddedResource Include="Forms\Popups\StartLessonForm.resx">
       <DependentUpon>StartLessonForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TemplateForm.resx">
+    <EmbeddedResource Include="Forms\TemplateForm.resx">
       <DependentUpon>TemplateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -207,5 +206,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
