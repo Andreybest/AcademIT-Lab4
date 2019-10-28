@@ -12,22 +12,26 @@ namespace ObjectOrientedCollege
 {
     public partial class TemplateForm : Form
     {
-        protected MainMenuForm FormData;
+        protected College college;
 
-        public TemplateForm(MainMenuForm FormData)
+        public TemplateForm()
         {
             InitializeComponent();
-            this.FormData = FormData;
+        }
+        public TemplateForm(College college)
+        {
+            InitializeComponent();
+            this.college = college;
         }
         
         private void TemplateForm_Load(object sender, EventArgs e)
         {
-            labelLine.Width = TemplateForm.ActiveForm.Size.Width;
+            labelLine.Width = Size.Width;
         }
 
         private void labelMenuButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

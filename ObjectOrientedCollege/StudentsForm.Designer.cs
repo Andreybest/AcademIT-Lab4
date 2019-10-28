@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.buttonAddStudent = new System.Windows.Forms.Button();
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.scholarship = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.moneyAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.knowlageLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,19 +54,30 @@
             this.lastName,
             this.age,
             this.phoneNumber,
+            this.group,
             this.scholarship,
             this.moneyAmount,
             this.knowlageLevel,
             this.knowlageProgress,
             this.studyButton});
             this.dataGridViewStudents.EnableHeadersVisualStyles = false;
-            this.dataGridViewStudents.Location = new System.Drawing.Point(22, 79);
+            this.dataGridViewStudents.Location = new System.Drawing.Point(15, 80);
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.ReadOnly = true;
             this.dataGridViewStudents.RowHeadersVisible = false;
-            this.dataGridViewStudents.Size = new System.Drawing.Size(843, 349);
+            this.dataGridViewStudents.Size = new System.Drawing.Size(853, 349);
             this.dataGridViewStudents.TabIndex = 2;
             this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
+            // 
+            // buttonAddStudent
+            // 
+            this.buttonAddStudent.Location = new System.Drawing.Point(769, 9);
+            this.buttonAddStudent.Name = "buttonAddStudent";
+            this.buttonAddStudent.Size = new System.Drawing.Size(84, 27);
+            this.buttonAddStudent.TabIndex = 3;
+            this.buttonAddStudent.Text = "Add Student";
+            this.buttonAddStudent.UseVisualStyleBackColor = true;
+            this.buttonAddStudent.Click += new System.EventHandler(this.buttonAddStudent_Click);
             // 
             // firstName
             // 
@@ -92,6 +105,13 @@
             this.phoneNumber.ReadOnly = true;
             this.phoneNumber.Width = 120;
             // 
+            // group
+            // 
+            this.group.HeaderText = "Group";
+            this.group.Name = "group";
+            this.group.ReadOnly = true;
+            this.group.Width = 50;
+            // 
             // scholarship
             // 
             this.scholarship.HeaderText = "Scholarship";
@@ -110,6 +130,7 @@
             this.knowlageLevel.HeaderText = "Knowlage Level";
             this.knowlageLevel.Name = "knowlageLevel";
             this.knowlageLevel.ReadOnly = true;
+            this.knowlageLevel.Width = 60;
             // 
             // knowlageProgress
             // 
@@ -132,11 +153,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonAddStudent);
             this.Controls.Add(this.dataGridViewStudents);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StudentsForm";
             this.Text = "StudentsFrom";
             this.Controls.SetChildIndex(this.dataGridViewStudents, 0);
+            this.Controls.SetChildIndex(this.buttonAddStudent, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,10 +168,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.Button buttonAddStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group;
         private System.Windows.Forms.DataGridViewTextBoxColumn scholarship;
         private System.Windows.Forms.DataGridViewTextBoxColumn moneyAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn knowlageLevel;

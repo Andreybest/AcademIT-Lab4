@@ -11,7 +11,7 @@ namespace ObjectOrientedCollege
     public partial class StudentsForm : TemplateForm
     {
 
-        public StudentsForm(MainMenuForm FormData) : base(FormData)
+        public StudentsForm(College college) : base(college)
         {
             InitializeComponent();
             ShowConsole();
@@ -20,12 +20,12 @@ namespace ObjectOrientedCollege
         
         private void ShowConsole()
         {
-            Console.WriteLine(FormData.college.address);
+            Console.WriteLine(college.address);
         }
 
-        private void RedrawGrid()
+        public void RedrawGrid()
         {
-            List<Student> students = FormData.college.students;
+            List<Student> students = college.students;
             dataGridViewStudents.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < students.Count; rowIndex++)
@@ -46,6 +46,10 @@ namespace ObjectOrientedCollege
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
                     Value = students[rowIndex].phoneNumber
+                });
+                row.Cells.Add(new DataGridViewTextBoxCell()
+                {
+                    Value = students[rowIndex].group
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
@@ -78,9 +82,16 @@ namespace ObjectOrientedCollege
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                FormData.college.students[e.RowIndex].SelfStudy();
+                college.students[e.RowIndex].SelfStudy();
                 RedrawGrid();
             }
+        }
+
+        private void buttonAddStudent_Click(object sender, EventArgs e)
+        {
+            AddStudentForm form = new AddStudentForm(college);
+            form.FormClosing += delegate { RedrawGrid(); };
+            form.Show();
         }
     }
 }
