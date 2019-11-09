@@ -38,7 +38,7 @@ namespace ObjectOrientedCollege
             //{
             //    label1.Text = "DESPACITO SANS";
             //}
-            var frm = new StudentsForm(this);
+            var frm = new TemplateForm();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.Manual;
             frm.FormClosing += delegate { this.Show(); };
