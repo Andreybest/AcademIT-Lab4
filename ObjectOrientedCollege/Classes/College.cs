@@ -63,6 +63,23 @@ namespace ObjectOrientedCollege
             teachers.Add(teacher);
         }
 
+        public int FindTeacher(string firstName, string lastName)
+        {
+            for (int i = 0; i < teachers.Count; i++)
+            {
+                if (teachers[i].firstName == firstName && teachers[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveTeacher(Teacher teacher)
+        {
+            teachers.Remove(teacher);
+        }
+
         public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
             for (int i = 0; i < studentGroups.Count; i++)

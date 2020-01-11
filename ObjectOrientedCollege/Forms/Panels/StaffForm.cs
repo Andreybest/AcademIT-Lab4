@@ -141,5 +141,24 @@ namespace ObjectOrientedCollege
             form.FormClosing += delegate { RedrawTechniciansGrid(); };
             form.Show();
         }
+
+        private void buttonRemoveTeacher_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTeachers.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedTeachersFirstName = dataGridViewTeachers.SelectedRows[0].Cells[0].Value.ToString();
+                string selectedTeachersLastName = dataGridViewTeachers.SelectedRows[0].Cells[1].Value.ToString();
+                int teacherNumber = college.FindTeacher(selectedTeachersFirstName, selectedTeachersLastName);
+                if (teacherNumber != -1)
+                {
+                    college.RemoveTeacher(college.teachers[teacherNumber]);
+                    RedrawTeachersGrid();
+                }
+            }
+        }
     }
 }
