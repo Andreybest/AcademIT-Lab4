@@ -10,6 +10,7 @@ namespace ObjectOrientedCollege
         private const string CreateRaportButtonText = "Create Raport";
         private const string AddHeadmanButtonText = "Add Headman";
         private const string GroupHasHeadmanMessage = "This group already has Headman.";
+        private const string NoGroupHeadmanMessage = "This group dosen't have headman, please assign one in order to use this function.";
 
 
         public GroupsForm(College college) : base(college)
@@ -79,7 +80,14 @@ namespace ObjectOrientedCollege
             {
                 if (e.ColumnIndex == 3)
                 {
-                    MessageBox.Show(college.studentGroups[e.RowIndex].ToString());
+                    if (college.studentGroups[e.RowIndex].GroupHeadmanExists())
+                    {
+                        MessageBox.Show(college.studentGroups[e.RowIndex].ToString());
+                    }
+                    else
+                    {
+                        MessageBox.Show(NoGroupHeadmanMessage);
+                    }
                 }
                 else if (e.ColumnIndex == 4)
                 {
