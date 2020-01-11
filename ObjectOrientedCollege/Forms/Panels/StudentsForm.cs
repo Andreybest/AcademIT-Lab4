@@ -77,11 +77,20 @@ namespace ObjectOrientedCollege
             }
         }
 
+        const string noGroupsMessage = "You need to add a group in order to add a student.";
+
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {
-            AddStudentForm form = new AddStudentForm(college);
-            form.FormClosing += delegate { RedrawGrid(); };
-            form.Show();
+            if (college.studentGroups.Count < 1)
+            {
+                MessageBox.Show(noGroupsMessage);
+            }
+            else
+            {
+                AddStudentForm form = new AddStudentForm(college);
+                form.FormClosing += delegate { RedrawGrid(); };
+                form.Show();
+            }
         }
     }
 }
