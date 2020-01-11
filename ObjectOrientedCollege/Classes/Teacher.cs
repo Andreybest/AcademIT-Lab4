@@ -4,11 +4,11 @@ namespace ObjectOrientedCollege
 {
     public class Teacher : Employee
     {
+        private const float KnowlagePerLesson = 15f;
+
         Random rand = new Random();
 
         public readonly string subject;
-
-        private const float _knowlagePerLesson = 15f;
 
         public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject) : base(firstName, lastName, age, phoneNumber, salary)
         {
@@ -21,7 +21,7 @@ namespace ObjectOrientedCollege
         {
             for (int i = 0; i < group.Students.Count; i++)
             {
-                group.Students[i].KnowlageProgress += _knowlagePerLesson * (float)rand.Next(_minRandomKnowlage, _maxRandomKnowlage) * ((float)audience.Clearness / (float)Audience.maxClearness) * (1f / group.Students.Count);
+                group.Students[i].KnowlageProgress += KnowlagePerLesson * (float)rand.Next(_minRandomKnowlage, _maxRandomKnowlage) * ((float)audience.Clearness / (float)Audience.maxClearness) * (1f / group.Students.Count);
             }
             // Audience clearness decreased by 30 to imitate dirtyness after lesson.
             audience.Clearness -= 30;

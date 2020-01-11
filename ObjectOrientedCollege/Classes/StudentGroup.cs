@@ -4,6 +4,8 @@ namespace ObjectOrientedCollege
 {
     public class StudentGroup
     {
+        private const string NoGroupHeadmanMessage = "This group dosen't have headman, please assign one in order to use this function.";
+
         public List<Student> Students { get; private set; } = new List<Student>();
         public Headman GroupHeadman { get; private set; }
 
@@ -38,14 +40,13 @@ namespace ObjectOrientedCollege
             return false;
         }
 
-        public const string noGroupHeadman = "This group dosen't have headman, please assign one in order to use this function.";
         public override string ToString()
         {
             if (GroupHeadmanExists())
             {
                 return $"Group {groupNumber} students:\n" + GroupHeadman.CreateGroupRaport(Students);
             }
-            return noGroupHeadman;
+            return NoGroupHeadmanMessage;
         }
     }
 }

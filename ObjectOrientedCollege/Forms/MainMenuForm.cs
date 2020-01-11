@@ -5,6 +5,8 @@ namespace ObjectOrientedCollege
 {
     public partial class MainMenuForm : Form
     {
+        private const string PayDayMessage = "Everyone got a money check!";
+
         public College college = new College("PPK", "Despacito land");
 
         public MainMenuForm()
@@ -69,7 +71,7 @@ namespace ObjectOrientedCollege
         private void buttonPayday_Click(object sender, EventArgs e)
         {
             college.Payday();
-            MessageBox.Show("Everyone got a money check!");
+            MessageBox.Show(PayDayMessage);
         }
     }
 }

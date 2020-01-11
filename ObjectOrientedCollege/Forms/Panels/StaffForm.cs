@@ -6,6 +6,9 @@ namespace ObjectOrientedCollege
 {
     public partial class StaffForm : ObjectOrientedCollege.TemplateForm
     {
+        private const string TeachGroupButtonText = "Teach Group";
+        private const string CleanAudienceButtonText = "Clean Audience";
+
         public StaffForm(College college) : base(college)
         {
             InitializeComponent();
@@ -31,7 +34,6 @@ namespace ObjectOrientedCollege
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                // TODO
                 RedrawTechniciansGrid();
             }
         }
@@ -74,7 +76,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
-                    Value = "Teach Group"
+                    Value = TeachGroupButtonText
                 });
 
                 dataGridViewTeachers.Rows.Add(row);
@@ -119,7 +121,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
-                    Value = "Clean Audience"
+                    Value = CleanAudienceButtonText
                 });
 
                 dataGridViewTechnicians.Rows.Add(row);

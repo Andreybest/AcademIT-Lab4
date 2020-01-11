@@ -63,7 +63,7 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                MessageBox.Show("All required fields should be filled!");
+                MessageBox.Show(Config.UnfulfilledRequiredFieldsMessage);
             }
         }
 

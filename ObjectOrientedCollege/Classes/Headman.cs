@@ -4,11 +4,11 @@ namespace ObjectOrientedCollege
 {
     public class Headman : Student
     {
+        private new const int MinScholarship = 1500;
+
         public int CountHeadmans { get; private set; } = 0;
 
-        public new const int minScholarship = 1500;
-
-        public Headman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = minScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel)
+        public Headman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel)
         {
             CountHeadmans++;
         }

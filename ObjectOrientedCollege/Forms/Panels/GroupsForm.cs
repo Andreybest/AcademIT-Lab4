@@ -6,6 +6,12 @@ namespace ObjectOrientedCollege
 {
     public partial class GroupsForm : ObjectOrientedCollege.TemplateForm
     {
+        private const string NoGroupHeadmanText = "No Group Headman";
+        private const string CreateRaportButtonText = "Create Raport";
+        private const string AddHeadmanButtonText = "Add Headman";
+        private const string GroupHasHeadmanMessage = "This group already has Headman.";
+
+
         public GroupsForm(College college) : base(college)
         {
             InitializeComponent();
@@ -35,7 +41,7 @@ namespace ObjectOrientedCollege
                 {
                     row.Cells.Add(new DataGridViewTextBoxCell()
                     {
-                        Value = "No Group Headman"
+                        Value = NoGroupHeadmanText
                     });
                 }
                 row.Cells.Add(new DataGridViewTextBoxCell()
@@ -44,7 +50,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
-                    Value = "Create Raport"
+                    Value = CreateRaportButtonText
                 });
                 if (groups[rowIndex].GroupHeadmanExists())
                 {
@@ -57,7 +63,7 @@ namespace ObjectOrientedCollege
                 {
                     row.Cells.Add(new DataGridViewButtonCell()
                     {
-                        Value = "Add Headman"
+                        Value = AddHeadmanButtonText
                     });
                 }
 
@@ -85,7 +91,7 @@ namespace ObjectOrientedCollege
                     }
                     else
                     {
-                        MessageBox.Show("This group already has Headman.");
+                        MessageBox.Show(GroupHasHeadmanMessage);
                     }
                 }
             }

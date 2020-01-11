@@ -52,7 +52,7 @@ namespace ObjectOrientedCollege
             teachers.Add(teacher);
         }
 
-        public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.minScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
+        public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
             for (int i = 0; i < studentGroups.Count; i++)
             {
@@ -66,7 +66,7 @@ namespace ObjectOrientedCollege
             }
         }
 
-        public bool AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.minScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
+        public bool AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
             for (int i = 0; i < studentGroups.Count; i++)
             {

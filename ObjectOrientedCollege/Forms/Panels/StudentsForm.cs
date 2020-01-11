@@ -6,6 +6,8 @@ namespace ObjectOrientedCollege
 {
     public partial class StudentsForm : TemplateForm
     {
+        private const string SelfStudyButtonText = "Self Study";
+        private const string noGroupsMessage = "You need to add a group in order to add a student.";
 
         public StudentsForm(College college) : base(college)
         {
@@ -59,7 +61,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
-                    Value = "Self Study"
+                    Value = SelfStudyButtonText
                 });
 
                 dataGridViewStudents.Rows.Add(row);
@@ -76,8 +78,6 @@ namespace ObjectOrientedCollege
                 RedrawGrid();
             }
         }
-
-        const string noGroupsMessage = "You need to add a group in order to add a student.";
 
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {

@@ -4,6 +4,8 @@ namespace ObjectOrientedCollege
 {
     public class Student : Human, IMoneyGetting
     {
+        public const int MinScholarship = 1000;
+
         Random rand = new Random();
 
         delegate void MoneyEarn();
@@ -14,9 +16,8 @@ namespace ObjectOrientedCollege
         public int Scholarship
         {
             get => _scholarship;
-            set => _scholarship = Math.Max(minScholarship, value);
+            set => _scholarship = Math.Max(MinScholarship, value);
         }
-        public const int minScholarship = 1000;
         protected int _salary = 2500;
 
         protected int _knowlageLevel;
@@ -56,7 +57,7 @@ namespace ObjectOrientedCollege
             }
         }
 
-        public Student(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = minScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber)
+        public Student(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber)
         {
             EarnMoney = EarnScholarship;
             this.group = group;
