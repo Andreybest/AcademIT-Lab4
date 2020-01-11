@@ -4,10 +4,8 @@ namespace ObjectOrientedCollege
 {
     public class StudentGroup
     {
-        private List<Student> students = new List<Student>();
-        public List<Student> Students { get => students; private set => students = value; }
-        private Headman groupHeadman;
-        public Headman GroupHeadman { get => groupHeadman; private set => groupHeadman = value; }
+        public List<Student> Students { get; private set; } = new List<Student>();
+        public Headman GroupHeadman { get; private set; }
 
         public readonly int groupNumber;
 
@@ -25,7 +23,7 @@ namespace ObjectOrientedCollege
         {
             if (!GroupHeadmanExists())
             {
-                groupHeadman = headman;
+                GroupHeadman = headman;
                 return true;
             }
             return false;
@@ -33,7 +31,7 @@ namespace ObjectOrientedCollege
 
         public bool GroupHeadmanExists()
         {
-            if (groupHeadman != null)
+            if (GroupHeadman != null)
             {
                 return true;
             }
@@ -45,7 +43,7 @@ namespace ObjectOrientedCollege
         {
             if (GroupHeadmanExists())
             {
-                return $"Group {groupNumber} students:\n" + groupHeadman.CreateGroupRaport(Students);
+                return $"Group {groupNumber} students:\n" + GroupHeadman.CreateGroupRaport(Students);
             }
             return noGroupHeadman;
         }

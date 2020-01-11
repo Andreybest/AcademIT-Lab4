@@ -10,20 +10,20 @@ namespace ObjectOrientedCollege
         MoneyEarn EarnMoney;
 
         public readonly int group;
-        protected int scholarship;
+        protected int _scholarship;
         public int Scholarship
         {
-            get => scholarship;
-            set => scholarship = Math.Max(minScholarship, value);
+            get => _scholarship;
+            set => _scholarship = Math.Max(minScholarship, value);
         }
         public const int minScholarship = 1000;
-        protected int salary = 2500;
+        protected int _salary = 2500;
 
-        protected int knowlageLevel;
+        protected int _knowlageLevel;
 
         public int KnowlageLevel
         {
-            get => knowlageLevel;
+            get => _knowlageLevel;
             set
             {
                 if (Enum.IsDefined(typeof(EKnowlageLevel), value))
@@ -32,26 +32,26 @@ namespace ObjectOrientedCollege
                     {
                         EarnMoney = EarnJobMoney;
                     }
-                    knowlageLevel = value;
+                    _knowlageLevel = value;
                 }
             }
         }
         
-        private const float maxKnowlageProgress = 100;
-        protected float knowlageProgress = 0;
+        private const float _maxKnowlageProgress = 100;
+        protected float _knowlageProgress = 0;
         public float KnowlageProgress
         {
-            get => knowlageProgress;
+            get => _knowlageProgress;
             set
             {
-                if (value >= maxKnowlageProgress)
+                if (value >= _maxKnowlageProgress)
                 {
-                    knowlageProgress = 0;
+                    _knowlageProgress = 0;
                     KnowlageLevel++;
                 }
                 else
                 {
-                    knowlageProgress = value;
+                    _knowlageProgress = value;
                 }
             }
         }
@@ -66,15 +66,15 @@ namespace ObjectOrientedCollege
 
         private void EarnScholarship()
         {
-            moneyAmount += scholarship;
-            knowlageProgress += 5;
+            moneyAmount += _scholarship;
+            _knowlageProgress += 5;
         }
 
         private void EarnJobMoney()
         {
-            moneyAmount += salary;
-            moneyAmount += scholarship;
-            salary += 50;
+            moneyAmount += _salary;
+            moneyAmount += _scholarship;
+            _salary += 50;
         }
 
         public void MakeMoney()
@@ -82,11 +82,11 @@ namespace ObjectOrientedCollege
             EarnMoney();
         }
 
-        private const int minSelfStudyResult = -2;
-        private const int maxSelfStudyResult = 15;
+        private const int _minSelfStudyResult = -2;
+        private const int _maxSelfStudyResult = 15;
         public void SelfStudy()
         {
-            KnowlageProgress += rand.Next(minSelfStudyResult, maxSelfStudyResult);
+            KnowlageProgress += rand.Next(_minSelfStudyResult, _maxSelfStudyResult);
         }
 
         public override string ToString()
