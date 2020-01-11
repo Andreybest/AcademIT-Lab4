@@ -32,6 +32,17 @@ namespace ObjectOrientedCollege
             audiences.Add(audience);
         }
 
+        public void RemoveAudience(int roomNumber)
+        {
+            for (int i = 0; i < audiences.Count; i++)
+            {
+                if (audiences[i].roomNumber == roomNumber)
+                {
+                    audiences.Remove(audiences[i]);
+                }
+            }
+        }
+
         public void AddGroup(int groupNumber)
         {
             for (int i = 0; i < studentGroups.Count; i++)

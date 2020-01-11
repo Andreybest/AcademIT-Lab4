@@ -83,5 +83,18 @@ namespace ObjectOrientedCollege
             form.FormClosing += delegate { RedrawGrid(); };
             form.Show();
         }
+
+        private void buttonRemoveAudience_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAudiences.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                college.RemoveAudience(college.audiences[dataGridViewAudiences.SelectedRows[0].Index].roomNumber);
+                RedrawGrid();
+            }
+        }
     }
 }
