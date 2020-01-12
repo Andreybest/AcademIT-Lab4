@@ -20,12 +20,9 @@ namespace ObjectOrientedCollege
 
         public void AddAudience(int roomNumber, int clearness = 100)
         {
-            for (int i = 0; i < audiences.Count; i++)
+            if (FindAudience(roomNumber) != -1)
             {
-                if (audiences[i].roomNumber == roomNumber)
-                {
-                    throw new ExistingNumerationException();
-                }
+                throw new ExistingNumerationException();
             }
 
             Audience audience = new Audience(roomNumber, clearness);
@@ -51,12 +48,9 @@ namespace ObjectOrientedCollege
 
         public void AddGroup(int groupNumber)
         {
-            for (int i = 0; i < studentGroups.Count; i++)
+            if (FindGroup(groupNumber) != -1)
             {
-                if (studentGroups[i].groupNumber == groupNumber)
-                {
-                    throw new ExistingNumerationException();
-                }
+                throw new ExistingNumerationException();
             }
 
             StudentGroup studentGroup = new StudentGroup(groupNumber);
@@ -82,6 +76,10 @@ namespace ObjectOrientedCollege
 
         public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
         {
+            if (FindTeacher(firstName, lastName) != -1)
+            {
+                throw new ExistingFullNameException();
+            }
             Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, subject);
             teachers.Add(teacher);
         }
@@ -105,16 +103,20 @@ namespace ObjectOrientedCollege
 
         public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
-            for (int i = 0; i < studentGroups.Count; i++)
+            int groupIndex = FindGroup(group);
+            if (groupIndex == -1)
             {
-                if (studentGroups[i].groupNumber == group)
-                {
-                    Student student = new Student(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
-                    studentGroups[i].AddStudent(student);
-                    students.Add(student);
-                    break;
-                }
+                throw new NonExistingGroupException();
             }
+
+            if (FindStudent(firstName, lastName) != -1)
+            {
+                throw new ExistingFullNameException();
+            }
+
+            Student student = new Student(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
+            studentGroups[groupIndex].AddStudent(student);
+            students.Add(student);
         }
 
         public int FindStudent(string firstName, string lastName)
@@ -134,27 +136,37 @@ namespace ObjectOrientedCollege
             students.Remove(student);
         }
 
-        public bool AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
+        public void AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
-            for (int i = 0; i < studentGroups.Count; i++)
+            int groupIndex = FindGroup(group);
+            if (groupIndex == -1)
             {
-                if (studentGroups[i].groupNumber == group)
-                {
-                    if (!studentGroups[i].GroupHeadmanExists())
-                    {
-                        Headman headman = new Headman(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
-                        studentGroups[i].AddStudent(headman);
-                        students.Add(headman);
-                        studentGroups[i].AddHeadman(headman);
-                        return true;
-                    }
-                }
+                throw new NonExistingGroupException();
             }
-            return false;
+
+            if (FindStudent(firstName, lastName) != -1)
+            {
+                throw new ExistingFullNameException();
+            }
+
+            if (studentGroups[groupIndex].GroupHeadmanExists())
+            {
+                throw new GroupHeadmanAlreadyExistException();
+            }
+
+            Headman headman = new Headman(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
+            studentGroups[groupIndex].AddStudent(headman);
+            studentGroups[groupIndex].AddHeadman(headman);
+            students.Add(headman);
         }
 
         public void AddTechnician(string firstName, string lastName, int age, string phoneNumber, int salary)
         {
+            if (FindTechnician(firstName, lastName) != -1)
+            {
+                throw new ExistingFullNameException();
+            }
+
             Technician technician = new Technician(firstName, lastName, age, phoneNumber, salary);
             technicians.Add(technician);
         }
