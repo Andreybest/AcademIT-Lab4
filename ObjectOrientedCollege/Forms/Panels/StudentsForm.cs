@@ -7,7 +7,7 @@ namespace ObjectOrientedCollege
     public partial class StudentsForm : TemplateForm
     {
         private const string SelfStudyButtonText = "Self Study";
-        private const string noGroupsMessage = "You need to add a group in order to add a student.";
+        private const string NoGroupsMessage = "You need to add a group in order to add a student.";
 
         private const int StudentFirstNameColumnIndex = 0;
         private const int StudentLastNameColumnIndex = 1;
@@ -86,7 +86,7 @@ namespace ObjectOrientedCollege
         {
             if (college.studentGroups.Count < 1)
             {
-                MessageBox.Show(noGroupsMessage);
+                MessageBox.Show(NoGroupsMessage);
             }
             else
             {

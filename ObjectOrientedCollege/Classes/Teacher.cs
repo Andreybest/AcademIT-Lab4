@@ -21,7 +21,7 @@ namespace ObjectOrientedCollege
         {
             for (int i = 0; i < group.Students.Count; i++)
             {
-                group.Students[i].KnowlageProgress += KnowlagePerLesson * (float)rand.Next(_minRandomKnowlage, _maxRandomKnowlage) * ((float)audience.Clearness / (float)Audience.maxClearness) * (1f / group.Students.Count);
+                group.Students[i].KnowlageProgress += KnowlagePerLesson * (float)rand.Next(_minRandomKnowlage, _maxRandomKnowlage) * ((float)audience.Clearness / (float)Audience.MaxClearness) * (1f / group.Students.Count);
             }
             // Audience clearness decreased by 30 to imitate dirtyness after lesson.
             audience.Clearness -= 30;

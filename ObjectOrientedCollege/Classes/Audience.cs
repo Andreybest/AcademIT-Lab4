@@ -5,7 +5,7 @@ namespace ObjectOrientedCollege
     public class Audience
     {
         public readonly int roomNumber;
-        public const int maxClearness = 100;
+        public const int MaxClearness = 100;
         private int _clearness;
         public int Clearness
         {
@@ -18,12 +18,12 @@ namespace ObjectOrientedCollege
                 }
                 else
                 {
-                    _clearness = Math.Min(maxClearness, value);
+                    _clearness = Math.Min(MaxClearness, value);
                 }
             }
         }
 
-        public Audience(int roomNumber, int clearness = maxClearness)
+        public Audience(int roomNumber, int clearness = MaxClearness)
         {
             this.roomNumber = roomNumber;
             this._clearness = clearness;

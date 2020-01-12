@@ -6,8 +6,8 @@ namespace ObjectOrientedCollege
 {
     public partial class AudiencesForm : ObjectOrientedCollege.TemplateForm
     {
-        private const string cleanButtonText = "Clean";
-        private const string noChosenTechnician = "Please add technicians before cleaning audiences.";
+        private const string CleanButtonText = "Clean";
+        private const string NoChosenTechnician = "Please add technicians before cleaning audiences.";
 
         private const int AudienceNumberColumnIndex = 0;
 
@@ -35,7 +35,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
-                    Value = cleanButtonText
+                    Value = CleanButtonText
                 });
 
                 dataGridViewAudiences.Rows.Add(row);
@@ -75,7 +75,7 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                MessageBox.Show(noChosenTechnician);
+                MessageBox.Show(NoChosenTechnician);
             }
         }
 
