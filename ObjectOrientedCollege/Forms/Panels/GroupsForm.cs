@@ -11,6 +11,7 @@ namespace ObjectOrientedCollege
         private const string AddHeadmanButtonText = "Add Headman";
         private const string GroupHasHeadmanMessage = "This group already has Headman.";
         private const string NoGroupHeadmanMessage = "This group dosen't have headman, please assign one in order to use this function.";
+        private const string GroupHaveStudentsMessage = "This group has students, please remove all students from this group before removing this group.";
 
 
         public GroupsForm(College college) : base(college)
@@ -110,6 +111,31 @@ namespace ObjectOrientedCollege
             AddGroupForm form = new AddGroupForm(college);
             form.FormClosing += delegate { RedrawGrid(); };
             form.Show();
+        }
+
+        private void buttonRemoveGroup_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewGroups.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                int groupNumber = int.Parse(dataGridViewGroups.SelectedRows[0].Cells[0].Value.ToString());
+                int groupIndex = college.FindGroup(groupNumber);
+                if (groupIndex != -1)
+                {
+                    if (college.studentGroups[groupIndex].HasStudents())
+                    {
+                        MessageBox.Show(GroupHaveStudentsMessage);
+                    }
+                    else
+                    {
+                        college.RemoveGroup(college.studentGroups[groupIndex]);
+                        RedrawGrid();
+                    }
+                }
+            }
         }
     }
 }

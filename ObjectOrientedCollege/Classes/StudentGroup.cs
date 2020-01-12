@@ -61,6 +61,12 @@ namespace ObjectOrientedCollege
             return false;
         }
 
+        public bool HasStudents()
+        {
+            if (Students.Count < 1) return false;
+            return true;
+        }
+
         public override string ToString()
         {
             return $"Group {groupNumber} students:\n" + GroupHeadman.CreateGroupRaport(Students);

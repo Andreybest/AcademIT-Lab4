@@ -69,6 +69,11 @@ namespace ObjectOrientedCollege
             return -1;
         }
 
+        public void RemoveGroup(StudentGroup group)
+        {
+            studentGroups.Remove(group);
+        }
+
         public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
         {
             Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, subject);

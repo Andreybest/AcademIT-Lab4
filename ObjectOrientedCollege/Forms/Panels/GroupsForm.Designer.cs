@@ -36,6 +36,7 @@
             this.createRaportButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.addHeadmanButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonAddGroup = new System.Windows.Forms.Button();
+            this.buttonRemoveGroup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +60,11 @@
             this.addHeadmanButton});
             this.dataGridViewGroups.EnableHeadersVisualStyles = false;
             this.dataGridViewGroups.Location = new System.Drawing.Point(188, 76);
+            this.dataGridViewGroups.MultiSelect = false;
             this.dataGridViewGroups.Name = "dataGridViewGroups";
             this.dataGridViewGroups.ReadOnly = true;
             this.dataGridViewGroups.RowHeadersVisible = false;
+            this.dataGridViewGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewGroups.Size = new System.Drawing.Size(513, 349);
             this.dataGridViewGroups.TabIndex = 3;
             this.dataGridViewGroups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGroups_CellContentClick);
@@ -114,10 +117,22 @@
             this.buttonAddGroup.UseVisualStyleBackColor = true;
             this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
             // 
+            // buttonRemoveGroup
+            // 
+            this.buttonRemoveGroup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveGroup.Location = new System.Drawing.Point(700, 11);
+            this.buttonRemoveGroup.Name = "buttonRemoveGroup";
+            this.buttonRemoveGroup.Size = new System.Drawing.Size(91, 23);
+            this.buttonRemoveGroup.TabIndex = 5;
+            this.buttonRemoveGroup.Text = "Remove Group";
+            this.buttonRemoveGroup.UseVisualStyleBackColor = true;
+            this.buttonRemoveGroup.Click += new System.EventHandler(this.buttonRemoveGroup_Click);
+            // 
             // GroupsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonRemoveGroup);
             this.Controls.Add(this.buttonAddGroup);
             this.Controls.Add(this.dataGridViewGroups);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -126,6 +141,7 @@
             this.Controls.SetChildIndex(this.labelTitle, 0);
             this.Controls.SetChildIndex(this.dataGridViewGroups, 0);
             this.Controls.SetChildIndex(this.buttonAddGroup, 0);
+            this.Controls.SetChildIndex(this.buttonRemoveGroup, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGroups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,5 +157,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn createRaportButton;
         private System.Windows.Forms.DataGridViewButtonColumn addHeadmanButton;
         private System.Windows.Forms.Button buttonAddGroup;
+        private System.Windows.Forms.Button buttonRemoveGroup;
     }
 }
