@@ -19,6 +19,24 @@ namespace ObjectOrientedCollege
             Students.Add(student);
         }
 
+        public int FindStudent(string firstName, string lastName)
+        {
+            for (int i = 0; i < Students.Count; i++)
+            {
+                if (Students[i].firstName == firstName && Students[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveStudent(Student student)
+        {
+            Students.Remove(student);
+            if (student is Headman) RemoveHeadman();
+        }
+
         public bool AddHeadman(Headman headman)
         {
             if (!GroupHeadmanExists())
@@ -29,6 +47,11 @@ namespace ObjectOrientedCollege
             return false;
         }
 
+        private void RemoveHeadman()
+        {
+            GroupHeadman = null;
+        }
+
         public bool GroupHeadmanExists()
         {
             if (GroupHeadman != null)
@@ -36,6 +59,12 @@ namespace ObjectOrientedCollege
                 return true;
             }
             return false;
+        }
+
+        public bool HasStudents()
+        {
+            if (Students.Count < 1) return false;
+            return true;
         }
 
         public override string ToString()

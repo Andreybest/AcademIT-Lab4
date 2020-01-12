@@ -36,6 +36,7 @@
             this.labelTechnician = new System.Windows.Forms.Label();
             this.comboBoxTechnicians = new System.Windows.Forms.ComboBox();
             this.buttonAddAudience = new System.Windows.Forms.Button();
+            this.buttonRemoveAudience = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAudiences)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,9 +58,11 @@
             this.cleanAudienceButton});
             this.dataGridViewAudiences.EnableHeadersVisualStyles = false;
             this.dataGridViewAudiences.Location = new System.Drawing.Point(258, 97);
+            this.dataGridViewAudiences.MultiSelect = false;
             this.dataGridViewAudiences.Name = "dataGridViewAudiences";
             this.dataGridViewAudiences.ReadOnly = true;
             this.dataGridViewAudiences.RowHeadersVisible = false;
+            this.dataGridViewAudiences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAudiences.Size = new System.Drawing.Size(364, 349);
             this.dataGridViewAudiences.TabIndex = 4;
             this.dataGridViewAudiences.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAudiences_CellContentClick);
@@ -119,10 +122,22 @@
             this.buttonAddAudience.UseVisualStyleBackColor = true;
             this.buttonAddAudience.Click += new System.EventHandler(this.buttonAddAudience_Click);
             // 
+            // buttonRemoveAudience
+            // 
+            this.buttonRemoveAudience.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveAudience.Location = new System.Drawing.Point(671, 11);
+            this.buttonRemoveAudience.Name = "buttonRemoveAudience";
+            this.buttonRemoveAudience.Size = new System.Drawing.Size(108, 23);
+            this.buttonRemoveAudience.TabIndex = 8;
+            this.buttonRemoveAudience.Text = "Remove Audience";
+            this.buttonRemoveAudience.UseVisualStyleBackColor = true;
+            this.buttonRemoveAudience.Click += new System.EventHandler(this.buttonRemoveAudience_Click);
+            // 
             // AudiencesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonRemoveAudience);
             this.Controls.Add(this.buttonAddAudience);
             this.Controls.Add(this.comboBoxTechnicians);
             this.Controls.Add(this.labelTechnician);
@@ -136,6 +151,7 @@
             this.Controls.SetChildIndex(this.labelTechnician, 0);
             this.Controls.SetChildIndex(this.comboBoxTechnicians, 0);
             this.Controls.SetChildIndex(this.buttonAddAudience, 0);
+            this.Controls.SetChildIndex(this.buttonRemoveAudience, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAudiences)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,5 +167,6 @@
         private System.Windows.Forms.Label labelTechnician;
         private System.Windows.Forms.ComboBox comboBoxTechnicians;
         private System.Windows.Forms.Button buttonAddAudience;
+        private System.Windows.Forms.Button buttonRemoveAudience;
     }
 }

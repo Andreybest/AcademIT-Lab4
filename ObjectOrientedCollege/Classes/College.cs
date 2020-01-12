@@ -32,6 +32,23 @@ namespace ObjectOrientedCollege
             audiences.Add(audience);
         }
 
+        public int FindAudience(int roomNumber)
+        {
+            for (int i = 0; i < audiences.Count; i++)
+            {
+                if (audiences[i].roomNumber == roomNumber)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveAudience(Audience audience)
+        {
+            audiences.Remove(audience);
+        }
+
         public void AddGroup(int groupNumber)
         {
             for (int i = 0; i < studentGroups.Count; i++)
@@ -46,10 +63,44 @@ namespace ObjectOrientedCollege
             studentGroups.Add(studentGroup);
         }
 
+        public int FindGroup(int groupNumber)
+        {
+            for (int i = 0; i < studentGroups.Count; i++)
+            {
+                if (studentGroups[i].groupNumber == groupNumber)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveGroup(StudentGroup group)
+        {
+            studentGroups.Remove(group);
+        }
+
         public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
         {
             Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, subject);
             teachers.Add(teacher);
+        }
+
+        public int FindTeacher(string firstName, string lastName)
+        {
+            for (int i = 0; i < teachers.Count; i++)
+            {
+                if (teachers[i].firstName == firstName && teachers[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveTeacher(Teacher teacher)
+        {
+            teachers.Remove(teacher);
         }
 
         public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
@@ -64,6 +115,23 @@ namespace ObjectOrientedCollege
                     break;
                 }
             }
+        }
+
+        public int FindStudent(string firstName, string lastName)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].firstName == firstName && students[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveStudent(Student student)
+        {
+            students.Remove(student);
         }
 
         public bool AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
@@ -89,6 +157,23 @@ namespace ObjectOrientedCollege
         {
             Technician technician = new Technician(firstName, lastName, age, phoneNumber, salary);
             technicians.Add(technician);
+        }
+
+        public int FindTechnician(string firstName, string lastName)
+        {
+            for (int i = 0; i < technicians.Count; i++)
+            {
+                if (technicians[i].firstName == firstName && technicians[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveTechnician(Technician technician)
+        {
+            technicians.Remove(technician);
         }
 
         public void Payday()

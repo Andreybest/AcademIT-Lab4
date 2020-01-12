@@ -9,6 +9,8 @@ namespace ObjectOrientedCollege
         private const string cleanButtonText = "Clean";
         private const string noChosenTechnician = "Please add technicians before cleaning audiences.";
 
+        private const int AudienceNumberColumnIndex = 0;
+
         public AudiencesForm(College college) : base(college)
         {
             InitializeComponent();
@@ -82,6 +84,24 @@ namespace ObjectOrientedCollege
             AddAudienceForm form = new AddAudienceForm(college);
             form.FormClosing += delegate { RedrawGrid(); };
             form.Show();
+        }
+
+        private void buttonRemoveAudience_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAudiences.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                int audienceNumber = int.Parse(dataGridViewAudiences.SelectedRows[0].Cells[AudienceNumberColumnIndex].Value.ToString());
+                int audienceIndex = college.FindAudience(audienceNumber);
+                if (audienceIndex != -1)
+                {
+                    college.RemoveAudience(college.audiences[audienceIndex]);
+                    RedrawGrid();
+                }
+            }
         }
     }
 }

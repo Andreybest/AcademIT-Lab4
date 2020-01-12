@@ -9,6 +9,9 @@ namespace ObjectOrientedCollege
         private const string TeachGroupButtonText = "Teach Group";
         private const string CleanAudienceButtonText = "Clean Audience";
 
+        private const int FirstNameColumnIndex = 0;
+        private const int LastNameColumnIndex = 1;
+
         public StaffForm(College college) : base(college)
         {
             InitializeComponent();
@@ -140,6 +143,44 @@ namespace ObjectOrientedCollege
             AddTechnicianForm form = new AddTechnicianForm(college);
             form.FormClosing += delegate { RedrawTechniciansGrid(); };
             form.Show();
+        }
+
+        private void buttonRemoveTeacher_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTeachers.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedTeachersFirstName = dataGridViewTeachers.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
+                string selectedTeachersLastName = dataGridViewTeachers.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
+                int teacherNumber = college.FindTeacher(selectedTeachersFirstName, selectedTeachersLastName);
+                if (teacherNumber != -1)
+                {
+                    college.RemoveTeacher(college.teachers[teacherNumber]);
+                    RedrawTeachersGrid();
+                }
+            }
+        }
+
+        private void buttonRemoveTechnician_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTechnicians.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedTechnicianFirstName = dataGridViewTechnicians.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
+                string selectedTechnicianLastName = dataGridViewTechnicians.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
+                int technicianNumber = college.FindTechnician(selectedTechnicianFirstName, selectedTechnicianLastName);
+                if (technicianNumber != -1)
+                {
+                    college.RemoveTechnician(college.technicians[technicianNumber]);
+                    RedrawTechniciansGrid();
+                }
+            }
         }
     }
 }

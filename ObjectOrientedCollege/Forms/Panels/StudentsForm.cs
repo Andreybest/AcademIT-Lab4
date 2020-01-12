@@ -9,6 +9,9 @@ namespace ObjectOrientedCollege
         private const string SelfStudyButtonText = "Self Study";
         private const string noGroupsMessage = "You need to add a group in order to add a student.";
 
+        private const int StudentFirstNameColumnIndex = 0;
+        private const int StudentLastNameColumnIndex = 1;
+
         public StudentsForm(College college) : base(college)
         {
             InitializeComponent();
@@ -90,6 +93,28 @@ namespace ObjectOrientedCollege
                 AddStudentForm form = new AddStudentForm(college);
                 form.FormClosing += delegate { RedrawGrid(); };
                 form.Show();
+            }
+        }
+
+        private void buttonRemoveStudent_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStudents.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[StudentFirstNameColumnIndex].Value.ToString();
+                string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[StudentLastNameColumnIndex].Value.ToString();
+                int studentNumber = college.FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int studentGroupNumber = college.studentGroups[college.FindGroup(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int groupNumber = college.FindGroup(college.students[studentNumber].group);
+                if (studentNumber != -1 && studentGroupNumber != -1)
+                {
+                    college.studentGroups[groupNumber].RemoveStudent(college.students[studentNumber]);
+                    college.RemoveStudent(college.students[studentNumber]);
+                    RedrawGrid();
+                }
             }
         }
     }
