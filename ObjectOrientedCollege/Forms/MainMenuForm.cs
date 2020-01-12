@@ -70,7 +70,7 @@ namespace ObjectOrientedCollege
 
         private void buttonPayday_Click(object sender, EventArgs e)
         {
-            college.Payday();
+            college.GiveMoneyToEveryHuman();
             MessageBox.Show(PayDayMessage);
         }
     }

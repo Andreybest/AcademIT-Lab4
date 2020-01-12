@@ -176,7 +176,7 @@ namespace ObjectOrientedCollege
             technicians.Remove(technician);
         }
 
-        public void Payday()
+        public void GiveMoneyToEveryHuman()
         {
             for (int i = 0; i < students.Count; i++)
             {
