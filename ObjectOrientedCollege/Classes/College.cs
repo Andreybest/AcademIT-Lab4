@@ -20,7 +20,7 @@ namespace ObjectOrientedCollege
 
         public void AddAudience(int roomNumber, int clearness = 100)
         {
-            if (FindAudience(roomNumber) != -1)
+            if (FindAudienceIndex(roomNumber) != -1)
             {
                 throw new ExistingNumerationException();
             }
@@ -29,7 +29,7 @@ namespace ObjectOrientedCollege
             audiences.Add(audience);
         }
 
-        public int FindAudience(int roomNumber)
+        public int FindAudienceIndex(int roomNumber)
         {
             for (int i = 0; i < audiences.Count; i++)
             {
@@ -48,7 +48,7 @@ namespace ObjectOrientedCollege
 
         public void AddGroup(int groupNumber)
         {
-            if (FindGroup(groupNumber) != -1)
+            if (FindGroupIndex(groupNumber) != -1)
             {
                 throw new ExistingNumerationException();
             }
@@ -57,7 +57,7 @@ namespace ObjectOrientedCollege
             studentGroups.Add(studentGroup);
         }
 
-        public int FindGroup(int groupNumber)
+        public int FindGroupIndex(int groupNumber)
         {
             for (int i = 0; i < studentGroups.Count; i++)
             {
@@ -76,7 +76,7 @@ namespace ObjectOrientedCollege
 
         public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
         {
-            if (FindTeacher(firstName, lastName) != -1)
+            if (FindTeacherIndex(firstName, lastName) != -1)
             {
                 throw new ExistingFullNameException();
             }
@@ -84,7 +84,7 @@ namespace ObjectOrientedCollege
             teachers.Add(teacher);
         }
 
-        public int FindTeacher(string firstName, string lastName)
+        public int FindTeacherIndex(string firstName, string lastName)
         {
             for (int i = 0; i < teachers.Count; i++)
             {
@@ -103,13 +103,13 @@ namespace ObjectOrientedCollege
 
         public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
-            int groupIndex = FindGroup(group);
+            int groupIndex = FindGroupIndex(group);
             if (groupIndex == -1)
             {
                 throw new NonExistingGroupException();
             }
 
-            if (FindStudent(firstName, lastName) != -1)
+            if (FindStudentIndex(firstName, lastName) != -1)
             {
                 throw new ExistingFullNameException();
             }
@@ -119,7 +119,7 @@ namespace ObjectOrientedCollege
             students.Add(student);
         }
 
-        public int FindStudent(string firstName, string lastName)
+        public int FindStudentIndex(string firstName, string lastName)
         {
             for (int i = 0; i < students.Count; i++)
             {
@@ -138,13 +138,13 @@ namespace ObjectOrientedCollege
 
         public void AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
         {
-            int groupIndex = FindGroup(group);
+            int groupIndex = FindGroupIndex(group);
             if (groupIndex == -1)
             {
                 throw new NonExistingGroupException();
             }
 
-            if (FindStudent(firstName, lastName) != -1)
+            if (FindStudentIndex(firstName, lastName) != -1)
             {
                 throw new ExistingFullNameException();
             }
@@ -162,7 +162,7 @@ namespace ObjectOrientedCollege
 
         public void AddTechnician(string firstName, string lastName, int age, string phoneNumber, int salary)
         {
-            if (FindTechnician(firstName, lastName) != -1)
+            if (FindTechnicianIndex(firstName, lastName) != -1)
             {
                 throw new ExistingFullNameException();
             }
@@ -171,7 +171,7 @@ namespace ObjectOrientedCollege
             technicians.Add(technician);
         }
 
-        public int FindTechnician(string firstName, string lastName)
+        public int FindTechnicianIndex(string firstName, string lastName)
         {
             for (int i = 0; i < technicians.Count; i++)
             {

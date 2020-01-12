@@ -106,9 +106,9 @@ namespace ObjectOrientedCollege
             {
                 string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[StudentFirstNameColumnIndex].Value.ToString();
                 string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[StudentLastNameColumnIndex].Value.ToString();
-                int studentNumber = college.FindStudent(selectedStudentFirstName, selectedStudentLastName);
-                int studentGroupNumber = college.studentGroups[college.FindGroup(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
-                int groupNumber = college.FindGroup(college.students[studentNumber].group);
+                int studentNumber = college.FindStudentIndex(selectedStudentFirstName, selectedStudentLastName);
+                int studentGroupNumber = college.studentGroups[college.FindGroupIndex(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int groupNumber = college.FindGroupIndex(college.students[studentNumber].group);
                 if (studentNumber != -1 && studentGroupNumber != -1)
                 {
                     college.studentGroups[groupNumber].RemoveStudent(college.students[studentNumber]);

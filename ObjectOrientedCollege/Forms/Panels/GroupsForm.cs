@@ -123,7 +123,7 @@ namespace ObjectOrientedCollege
             else
             {
                 int groupNumber = int.Parse(dataGridViewGroups.SelectedRows[0].Cells[GroupNumberColumnIndex].Value.ToString());
-                int groupIndex = college.FindGroup(groupNumber);
+                int groupIndex = college.FindGroupIndex(groupNumber);
                 if (groupIndex != -1)
                 {
                     if (college.studentGroups[groupIndex].HasStudents())
