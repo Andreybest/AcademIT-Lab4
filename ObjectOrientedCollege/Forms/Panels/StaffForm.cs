@@ -9,6 +9,9 @@ namespace ObjectOrientedCollege
         private const string TeachGroupButtonText = "Teach Group";
         private const string CleanAudienceButtonText = "Clean Audience";
 
+        private const int FirstNameColumnIndex = 0;
+        private const int LastNameColumnIndex = 1;
+
         public StaffForm(College college) : base(college)
         {
             InitializeComponent();
@@ -150,8 +153,8 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                string selectedTeachersFirstName = dataGridViewTeachers.SelectedRows[0].Cells[0].Value.ToString();
-                string selectedTeachersLastName = dataGridViewTeachers.SelectedRows[0].Cells[1].Value.ToString();
+                string selectedTeachersFirstName = dataGridViewTeachers.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
+                string selectedTeachersLastName = dataGridViewTeachers.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
                 int teacherNumber = college.FindTeacher(selectedTeachersFirstName, selectedTeachersLastName);
                 if (teacherNumber != -1)
                 {
@@ -169,8 +172,8 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                string selectedTechnicianFirstName = dataGridViewTechnicians.SelectedRows[0].Cells[0].Value.ToString();
-                string selectedTechnicianLastName = dataGridViewTechnicians.SelectedRows[0].Cells[1].Value.ToString();
+                string selectedTechnicianFirstName = dataGridViewTechnicians.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
+                string selectedTechnicianLastName = dataGridViewTechnicians.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
                 int technicianNumber = college.FindTechnician(selectedTechnicianFirstName, selectedTechnicianLastName);
                 if (technicianNumber != -1)
                 {

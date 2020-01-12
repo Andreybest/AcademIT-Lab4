@@ -9,6 +9,9 @@ namespace ObjectOrientedCollege
         private const string SelfStudyButtonText = "Self Study";
         private const string noGroupsMessage = "You need to add a group in order to add a student.";
 
+        private const int StudentFirstNameColumnIndex = 0;
+        private const int StudentLastNameColumnIndex = 1;
+
         public StudentsForm(College college) : base(college)
         {
             InitializeComponent();
@@ -101,8 +104,8 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[0].Value.ToString();
-                string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[1].Value.ToString();
+                string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[StudentFirstNameColumnIndex].Value.ToString();
+                string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[StudentLastNameColumnIndex].Value.ToString();
                 int studentNumber = college.FindStudent(selectedStudentFirstName, selectedStudentLastName);
                 int studentGroupNumber = college.studentGroups[college.FindGroup(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
                 int groupNumber = college.FindGroup(college.students[studentNumber].group);

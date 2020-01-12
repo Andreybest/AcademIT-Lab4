@@ -9,6 +9,8 @@ namespace ObjectOrientedCollege
         private const string cleanButtonText = "Clean";
         private const string noChosenTechnician = "Please add technicians before cleaning audiences.";
 
+        private const int AudienceNumberColumnIndex = 0;
+
         public AudiencesForm(College college) : base(college)
         {
             InitializeComponent();
@@ -92,7 +94,7 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                int audienceNumber = int.Parse(dataGridViewAudiences.SelectedRows[0].Cells[0].Value.ToString());
+                int audienceNumber = int.Parse(dataGridViewAudiences.SelectedRows[0].Cells[AudienceNumberColumnIndex].Value.ToString());
                 int audienceIndex = college.FindAudience(audienceNumber);
                 if (audienceIndex != -1)
                 {
