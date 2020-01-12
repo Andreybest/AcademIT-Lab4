@@ -4,7 +4,7 @@ namespace ObjectOrientedCollege
 {
     public class Headman : Student
     {
-        private new const int MinScholarship = 1500;
+        public new const int MinScholarship = 1500;
 
         public int CountHeadmans { get; private set; } = 0;
 
