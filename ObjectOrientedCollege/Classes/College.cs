@@ -176,20 +176,19 @@ namespace ObjectOrientedCollege
             technicians.Remove(technician);
         }
 
+        private void GiveMoneyToEveryHumanInList<T>(List<T> humans) where T : IMoneyGetting
+        {
+            for (int i = 0; i < humans.Count; i++)
+            {
+                humans[i].MakeMoney();
+            }
+        }
+
         public void GiveMoneyToEveryHuman()
         {
-            for (int i = 0; i < students.Count; i++)
-            {
-                students[i].MakeMoney();
-            }
-            for (int i = 0; i < teachers.Count; i++)
-            {
-                teachers[i].MakeMoney();
-            }
-            for (int i = 0; i < technicians.Count; i++)
-            {
-                technicians[i].MakeMoney();
-            }
+            GiveMoneyToEveryHumanInList(students);
+            GiveMoneyToEveryHumanInList(teachers);
+            GiveMoneyToEveryHumanInList(technicians);
         }
     }
 }

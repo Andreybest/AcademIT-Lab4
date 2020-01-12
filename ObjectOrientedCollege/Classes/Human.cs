@@ -1,6 +1,6 @@
 ﻿namespace ObjectOrientedCollege
 {
-    public abstract class Human
+    public abstract class Human : IMoneyGetting
     {
         public readonly string firstName;
         public readonly string lastName;
@@ -15,5 +15,7 @@
             this.age = age;
             this.phoneNumber = phoneNumber;
         }
+
+        public void MakeMoney() {}
     }
 }
