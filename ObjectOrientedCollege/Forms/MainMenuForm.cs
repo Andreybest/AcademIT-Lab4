@@ -22,49 +22,49 @@ namespace ObjectOrientedCollege
 
         private void buttonStudents_Click(object sender, EventArgs e)
         {
-            StudentsForm frm = new StudentsForm(college)
+            StudentsForm form = new StudentsForm(college)
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
             this.Hide();
         }
 
         private void buttonGroups_Click(object sender, EventArgs e)
         {
-            GroupsForm frm = new GroupsForm(college)
+            GroupsForm form = new GroupsForm(college)
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
             this.Hide();
         }
 
         private void buttonAudiences_Click(object sender, EventArgs e)
         {
-            AudiencesForm frm = new AudiencesForm(college)
+            AudiencesForm form = new AudiencesForm(college)
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
             this.Hide();
         }
 
         private void buttonStaff_Click(object sender, EventArgs e)
         {
-            StaffForm frm = new StaffForm(college)
+            StaffForm form = new StaffForm(college)
             {
                 Location = this.Location,
                 StartPosition = FormStartPosition.Manual
             };
-            frm.FormClosing += delegate { this.Show(); };
-            frm.Show();
+            form.FormClosing += delegate { this.Show(); };
+            form.Show();
             this.Hide();
         }
 
