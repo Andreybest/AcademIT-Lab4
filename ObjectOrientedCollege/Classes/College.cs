@@ -119,6 +119,23 @@ namespace ObjectOrientedCollege
             technicians.Add(technician);
         }
 
+        public int FindTechnician(string firstName, string lastName)
+        {
+            for (int i = 0; i < technicians.Count; i++)
+            {
+                if (technicians[i].firstName == firstName && technicians[i].lastName == lastName)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public void RemoveTechnician(Technician technician)
+        {
+            technicians.Remove(technician);
+        }
+
         public void Payday()
         {
             for (int i = 0; i < students.Count; i++)

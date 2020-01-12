@@ -52,6 +52,7 @@
             this.cleanTimesTechnician = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cleanTechnicianButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonRemoveTeacher = new System.Windows.Forms.Button();
+            this.buttonRemoveTechnician = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeachers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTechnicians)).BeginInit();
             this.SuspendLayout();
@@ -200,9 +201,11 @@
             this.cleanTechnicianButton});
             this.dataGridViewTechnicians.EnableHeadersVisualStyles = false;
             this.dataGridViewTechnicians.Location = new System.Drawing.Point(69, 282);
+            this.dataGridViewTechnicians.MultiSelect = false;
             this.dataGridViewTechnicians.Name = "dataGridViewTechnicians";
             this.dataGridViewTechnicians.ReadOnly = true;
             this.dataGridViewTechnicians.RowHeadersVisible = false;
+            this.dataGridViewTechnicians.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewTechnicians.Size = new System.Drawing.Size(743, 167);
             this.dataGridViewTechnicians.TabIndex = 6;
             this.dataGridViewTechnicians.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTechnicians_CellContentClick);
@@ -272,10 +275,22 @@
             this.buttonRemoveTeacher.UseVisualStyleBackColor = true;
             this.buttonRemoveTeacher.Click += new System.EventHandler(this.buttonRemoveTeacher_Click);
             // 
+            // buttonRemoveTechnician
+            // 
+            this.buttonRemoveTechnician.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveTechnician.Location = new System.Drawing.Point(604, 252);
+            this.buttonRemoveTechnician.Name = "buttonRemoveTechnician";
+            this.buttonRemoveTechnician.Size = new System.Drawing.Size(111, 23);
+            this.buttonRemoveTechnician.TabIndex = 10;
+            this.buttonRemoveTechnician.Text = "Remove Technician";
+            this.buttonRemoveTechnician.UseVisualStyleBackColor = true;
+            this.buttonRemoveTechnician.Click += new System.EventHandler(this.buttonRemoveTechnician_Click);
+            // 
             // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonRemoveTechnician);
             this.Controls.Add(this.buttonRemoveTeacher);
             this.Controls.Add(this.buttonAddTechnician);
             this.Controls.Add(this.labelTechnicians);
@@ -294,6 +309,7 @@
             this.Controls.SetChildIndex(this.labelTechnicians, 0);
             this.Controls.SetChildIndex(this.buttonAddTechnician, 0);
             this.Controls.SetChildIndex(this.buttonRemoveTeacher, 0);
+            this.Controls.SetChildIndex(this.buttonRemoveTechnician, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeachers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTechnicians)).EndInit();
             this.ResumeLayout(false);
@@ -326,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cleanTimesTechnician;
         private System.Windows.Forms.DataGridViewButtonColumn cleanTechnicianButton;
         private System.Windows.Forms.Button buttonRemoveTeacher;
+        private System.Windows.Forms.Button buttonRemoveTechnician;
     }
 }

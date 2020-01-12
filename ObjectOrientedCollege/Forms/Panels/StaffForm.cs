@@ -160,5 +160,24 @@ namespace ObjectOrientedCollege
                 }
             }
         }
+
+        private void buttonRemoveTechnician_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewTechnicians.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedTechnicianFirstName = dataGridViewTechnicians.SelectedRows[0].Cells[0].Value.ToString();
+                string selectedTechnicianLastName = dataGridViewTechnicians.SelectedRows[0].Cells[1].Value.ToString();
+                int technicianNumber = college.FindTechnician(selectedTechnicianFirstName, selectedTechnicianLastName);
+                if (technicianNumber != -1)
+                {
+                    college.RemoveTechnician(college.technicians[technicianNumber]);
+                    RedrawTechniciansGrid();
+                }
+            }
+        }
     }
 }
