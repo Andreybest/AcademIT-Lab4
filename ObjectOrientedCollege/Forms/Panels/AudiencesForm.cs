@@ -92,8 +92,13 @@ namespace ObjectOrientedCollege
             }
             else
             {
-                college.RemoveAudience(college.audiences[dataGridViewAudiences.SelectedRows[0].Index].roomNumber);
-                RedrawGrid();
+                int audienceNumber = int.Parse(dataGridViewAudiences.SelectedRows[0].Cells[0].Value.ToString());
+                int audienceIndex = college.FindAudience(audienceNumber);
+                if (audienceIndex != -1)
+                {
+                    college.RemoveAudience(college.audiences[audienceIndex]);
+                    RedrawGrid();
+                }
             }
         }
     }
