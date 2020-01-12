@@ -41,6 +41,7 @@
             this.knowlageProgress = new ObjectOrientedCollege.DataGridViewProgressColumn();
             this.studyButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonAddStudent = new System.Windows.Forms.Button();
+            this.buttonRemoveStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +70,11 @@
             this.studyButton});
             this.dataGridViewStudents.EnableHeadersVisualStyles = false;
             this.dataGridViewStudents.Location = new System.Drawing.Point(15, 80);
+            this.dataGridViewStudents.MultiSelect = false;
             this.dataGridViewStudents.Name = "dataGridViewStudents";
             this.dataGridViewStudents.ReadOnly = true;
             this.dataGridViewStudents.RowHeadersVisible = false;
+            this.dataGridViewStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStudents.Size = new System.Drawing.Size(853, 349);
             this.dataGridViewStudents.TabIndex = 2;
             this.dataGridViewStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStudents_CellContentClick);
@@ -157,10 +160,22 @@
             this.buttonAddStudent.UseVisualStyleBackColor = true;
             this.buttonAddStudent.Click += new System.EventHandler(this.buttonAddStudent_Click);
             // 
+            // buttonRemoveStudent
+            // 
+            this.buttonRemoveStudent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRemoveStudent.Location = new System.Drawing.Point(663, 9);
+            this.buttonRemoveStudent.Name = "buttonRemoveStudent";
+            this.buttonRemoveStudent.Size = new System.Drawing.Size(100, 27);
+            this.buttonRemoveStudent.TabIndex = 4;
+            this.buttonRemoveStudent.Text = "Remove Student";
+            this.buttonRemoveStudent.UseVisualStyleBackColor = true;
+            this.buttonRemoveStudent.Click += new System.EventHandler(this.buttonRemoveStudent_Click);
+            // 
             // StudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonRemoveStudent);
             this.Controls.Add(this.buttonAddStudent);
             this.Controls.Add(this.dataGridViewStudents);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -169,6 +184,7 @@
             this.Controls.SetChildIndex(this.labelTitle, 0);
             this.Controls.SetChildIndex(this.dataGridViewStudents, 0);
             this.Controls.SetChildIndex(this.buttonAddStudent, 0);
+            this.Controls.SetChildIndex(this.buttonRemoveStudent, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +205,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn knowlageLevel;
         private DataGridViewProgressColumn knowlageProgress;
         private System.Windows.Forms.DataGridViewButtonColumn studyButton;
+        private System.Windows.Forms.Button buttonRemoveStudent;
     }
 }

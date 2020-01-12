@@ -92,5 +92,27 @@ namespace ObjectOrientedCollege
                 form.Show();
             }
         }
+
+        private void buttonRemoveStudent_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStudents.SelectedRows.Count < 1)
+            {
+                MessageBox.Show(Config.NoChosenRowToRemoveMessage);
+            }
+            else
+            {
+                string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[0].Value.ToString();
+                string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[1].Value.ToString();
+                int studentNumber = college.FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int studentGroupNumber = college.studentGroups[college.FindGroup(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int groupNumber = college.FindGroup(college.students[studentNumber].group);
+                if (studentNumber != -1 && studentGroupNumber != -1)
+                {
+                    college.studentGroups[groupNumber].RemoveStudent(college.students[studentNumber]);
+                    college.RemoveStudent(college.students[studentNumber]);
+                    RedrawGrid();
+                }
+            }
+        }
     }
 }
