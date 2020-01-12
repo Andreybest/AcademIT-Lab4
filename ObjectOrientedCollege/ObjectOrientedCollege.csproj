@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Exceptions\ExistingFullNameException.cs" />
+    <Compile Include="Exceptions\GroupHeadmanAlreadyExistException.cs" />
+    <Compile Include="Exceptions\NonExistingGroupException.cs" />
     <Compile Include="Forms\Popups\AddAudienceForm.cs">
       <SubType>Form</SubType>
     </Compile>

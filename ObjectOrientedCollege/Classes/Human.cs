@@ -2,18 +2,18 @@
 {
     public abstract class Human : IMoneyGetting
     {
-        public readonly string firstName;
-        public readonly string lastName;
-        public readonly int age;
-        public readonly string phoneNumber;
-        public int moneyAmount = 0;
+        public readonly string FirstName;
+        public readonly string LastName;
+        public readonly int Age;
+        public readonly string PhoneNumber;
+        public int MoneyAmount = 0;
 
         public Human(string firstName, string lastName, int age, string phoneNumber)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.phoneNumber = phoneNumber;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.PhoneNumber = phoneNumber;
         }
 
         public void MakeMoney() {}

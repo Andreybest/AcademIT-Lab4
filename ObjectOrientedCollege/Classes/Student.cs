@@ -11,7 +11,7 @@ namespace ObjectOrientedCollege
         delegate void MoneyEarn();
         MoneyEarn EarnMoney;
 
-        public readonly int group;
+        public readonly int Group;
         protected int _scholarship;
         public int Scholarship
         {
@@ -60,21 +60,21 @@ namespace ObjectOrientedCollege
         public Student(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average) : base(firstName, lastName, age, phoneNumber)
         {
             EarnMoney = EarnScholarship;
-            this.group = group;
+            this.Group = group;
             Scholarship = scholarship;
             KnowlageLevel = knowlageLevel;
         }
 
         private void EarnScholarship()
         {
-            moneyAmount += _scholarship;
+            MoneyAmount += _scholarship;
             _knowlageProgress += 5;
         }
 
         private void EarnJobMoney()
         {
-            moneyAmount += _salary;
-            moneyAmount += _scholarship;
+            MoneyAmount += _salary;
+            MoneyAmount += _scholarship;
             _salary += 50;
         }
 
@@ -92,7 +92,7 @@ namespace ObjectOrientedCollege
 
         public override string ToString()
         {
-            return $"Name: {firstName} {lastName} Age: {age} Phone number: {phoneNumber}";
+            return $"Name: {FirstName} {LastName} Age: {Age} Phone number: {PhoneNumber}";
         }
     }
 }

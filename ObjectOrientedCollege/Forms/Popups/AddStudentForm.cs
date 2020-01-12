@@ -15,11 +15,11 @@ namespace ObjectOrientedCollege
 
         private void AddStudentForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < college.studentGroups.Count; i++)
+            for (int i = 0; i < college.StudentGroups.Count; i++)
             {
-                comboBoxGroups.Items.Add(college.studentGroups[i].groupNumber);
+                comboBoxGroups.Items.Add(college.StudentGroups[i].GroupNumber);
             }
-            if (college.studentGroups.Count > 0)
+            if (college.StudentGroups.Count > 0)
             {
                 comboBoxGroups.SelectedIndex = 0;
             }

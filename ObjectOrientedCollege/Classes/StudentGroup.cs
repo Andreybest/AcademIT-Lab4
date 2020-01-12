@@ -7,11 +7,11 @@ namespace ObjectOrientedCollege
         public List<Student> Students { get; private set; } = new List<Student>();
         public Headman GroupHeadman { get; private set; }
 
-        public readonly int groupNumber;
+        public readonly int GroupNumber;
 
         public StudentGroup(int groupNumber)
         {
-            this.groupNumber = groupNumber;
+            this.GroupNumber = groupNumber;
         }
 
         public void AddStudent(Student student)
@@ -23,7 +23,7 @@ namespace ObjectOrientedCollege
         {
             for (int i = 0; i < Students.Count; i++)
             {
-                if (Students[i].firstName == firstName && Students[i].lastName == lastName)
+                if (Students[i].FirstName == firstName && Students[i].LastName == lastName)
                 {
                     return i;
                 }
@@ -69,7 +69,7 @@ namespace ObjectOrientedCollege
 
         public override string ToString()
         {
-            return $"Group {groupNumber} students:\n" + GroupHeadman.CreateGroupRaport(Students);
+            return $"Group {GroupNumber} students:\n" + GroupHeadman.CreateGroupRaport(Students);
         }
     }
 }

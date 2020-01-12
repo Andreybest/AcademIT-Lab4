@@ -4,18 +4,18 @@ namespace ObjectOrientedCollege
 {
     public class College
     {
-        public readonly string name;
-        public readonly string address;
-        public List<Student> students = new List<Student>();
-        public List<Teacher> teachers = new List<Teacher>();
-        public List<StudentGroup> studentGroups = new List<StudentGroup>();
-        public List<Audience> audiences = new List<Audience>();
-        public List<Technician> technicians = new List<Technician>();
+        public readonly string Name;
+        public readonly string Address;
+        public List<Student> Students = new List<Student>();
+        public List<Teacher> Teachers = new List<Teacher>();
+        public List<StudentGroup> StudentGroups = new List<StudentGroup>();
+        public List<Audience> Audiences = new List<Audience>();
+        public List<Technician> Technicians = new List<Technician>();
 
         public College(string name, string address)
         {
-            this.name = name;
-            this.address = address;
+            this.Name = name;
+            this.Address = address;
         }
 
         public void AddAudience(int roomNumber, int clearness = 100)
@@ -26,14 +26,14 @@ namespace ObjectOrientedCollege
             }
 
             Audience audience = new Audience(roomNumber, clearness);
-            audiences.Add(audience);
+            Audiences.Add(audience);
         }
 
         public int FindAudienceIndex(int roomNumber)
         {
-            for (int i = 0; i < audiences.Count; i++)
+            for (int i = 0; i < Audiences.Count; i++)
             {
-                if (audiences[i].roomNumber == roomNumber)
+                if (Audiences[i].RoomNumber == roomNumber)
                 {
                     return i;
                 }
@@ -43,7 +43,7 @@ namespace ObjectOrientedCollege
 
         public void RemoveAudience(Audience audience)
         {
-            audiences.Remove(audience);
+            Audiences.Remove(audience);
         }
 
         public void AddGroup(int groupNumber)
@@ -54,14 +54,14 @@ namespace ObjectOrientedCollege
             }
 
             StudentGroup studentGroup = new StudentGroup(groupNumber);
-            studentGroups.Add(studentGroup);
+            StudentGroups.Add(studentGroup);
         }
 
         public int FindGroupIndex(int groupNumber)
         {
-            for (int i = 0; i < studentGroups.Count; i++)
+            for (int i = 0; i < StudentGroups.Count; i++)
             {
-                if (studentGroups[i].groupNumber == groupNumber)
+                if (StudentGroups[i].GroupNumber == groupNumber)
                 {
                     return i;
                 }
@@ -71,7 +71,7 @@ namespace ObjectOrientedCollege
 
         public void RemoveGroup(StudentGroup group)
         {
-            studentGroups.Remove(group);
+            StudentGroups.Remove(group);
         }
 
         public void AddTeacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject)
@@ -81,14 +81,14 @@ namespace ObjectOrientedCollege
                 throw new ExistingFullNameException();
             }
             Teacher teacher = new Teacher(firstName, lastName, age, phoneNumber, salary, subject);
-            teachers.Add(teacher);
+            Teachers.Add(teacher);
         }
 
         public int FindTeacherIndex(string firstName, string lastName)
         {
-            for (int i = 0; i < teachers.Count; i++)
+            for (int i = 0; i < Teachers.Count; i++)
             {
-                if (teachers[i].firstName == firstName && teachers[i].lastName == lastName)
+                if (Teachers[i].FirstName == firstName && Teachers[i].LastName == lastName)
                 {
                     return i;
                 }
@@ -98,7 +98,7 @@ namespace ObjectOrientedCollege
 
         public void RemoveTeacher(Teacher teacher)
         {
-            teachers.Remove(teacher);
+            Teachers.Remove(teacher);
         }
 
         public void AddStudent(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Student.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
@@ -115,15 +115,15 @@ namespace ObjectOrientedCollege
             }
 
             Student student = new Student(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
-            studentGroups[groupIndex].AddStudent(student);
-            students.Add(student);
+            StudentGroups[groupIndex].AddStudent(student);
+            Students.Add(student);
         }
 
         public int FindStudentIndex(string firstName, string lastName)
         {
-            for (int i = 0; i < students.Count; i++)
+            for (int i = 0; i < Students.Count; i++)
             {
-                if (students[i].firstName == firstName && students[i].lastName == lastName)
+                if (Students[i].FirstName == firstName && Students[i].LastName == lastName)
                 {
                     return i;
                 }
@@ -133,7 +133,7 @@ namespace ObjectOrientedCollege
 
         public void RemoveStudent(Student student)
         {
-            students.Remove(student);
+            Students.Remove(student);
         }
 
         public void AddHeadman(string firstName, string lastName, int age, string phoneNumber, int group, int scholarship = Headman.MinScholarship, int knowlageLevel = (int)EKnowlageLevel.average)
@@ -149,15 +149,15 @@ namespace ObjectOrientedCollege
                 throw new ExistingFullNameException();
             }
 
-            if (studentGroups[groupIndex].GroupHeadmanExists())
+            if (StudentGroups[groupIndex].GroupHeadmanExists())
             {
                 throw new GroupHeadmanAlreadyExistException();
             }
 
             Headman headman = new Headman(firstName, lastName, age, phoneNumber, group, scholarship, knowlageLevel);
-            studentGroups[groupIndex].AddStudent(headman);
-            studentGroups[groupIndex].AddHeadman(headman);
-            students.Add(headman);
+            StudentGroups[groupIndex].AddStudent(headman);
+            StudentGroups[groupIndex].AddHeadman(headman);
+            Students.Add(headman);
         }
 
         public void AddTechnician(string firstName, string lastName, int age, string phoneNumber, int salary)
@@ -168,14 +168,14 @@ namespace ObjectOrientedCollege
             }
 
             Technician technician = new Technician(firstName, lastName, age, phoneNumber, salary);
-            technicians.Add(technician);
+            Technicians.Add(technician);
         }
 
         public int FindTechnicianIndex(string firstName, string lastName)
         {
-            for (int i = 0; i < technicians.Count; i++)
+            for (int i = 0; i < Technicians.Count; i++)
             {
-                if (technicians[i].firstName == firstName && technicians[i].lastName == lastName)
+                if (Technicians[i].FirstName == firstName && Technicians[i].LastName == lastName)
                 {
                     return i;
                 }
@@ -185,7 +185,7 @@ namespace ObjectOrientedCollege
 
         public void RemoveTechnician(Technician technician)
         {
-            technicians.Remove(technician);
+            Technicians.Remove(technician);
         }
 
         private void GiveMoneyToEveryHumanInList<T>(List<T> humans) where T : IMoneyGetting
@@ -198,9 +198,9 @@ namespace ObjectOrientedCollege
 
         public void GiveMoneyToEveryHuman()
         {
-            GiveMoneyToEveryHumanInList(students);
-            GiveMoneyToEveryHumanInList(teachers);
-            GiveMoneyToEveryHumanInList(technicians);
+            GiveMoneyToEveryHumanInList(Students);
+            GiveMoneyToEveryHumanInList(Teachers);
+            GiveMoneyToEveryHumanInList(Technicians);
         }
     }
 }

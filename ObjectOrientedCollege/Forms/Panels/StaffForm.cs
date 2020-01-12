@@ -25,7 +25,7 @@ namespace ObjectOrientedCollege
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                StartLessonForm form = new StartLessonForm(college, college.teachers[e.RowIndex].firstName + " " + college.teachers[e.RowIndex].lastName);
+                StartLessonForm form = new StartLessonForm(college, college.Teachers[e.RowIndex].FirstName + " " + college.Teachers[e.RowIndex].LastName);
                 form.FormClosing += delegate { RedrawTeachersGrid(); };
                 form.Show();
             }
@@ -43,7 +43,7 @@ namespace ObjectOrientedCollege
 
         private void RedrawTeachersGrid()
         {
-            List<Teacher> teachers = college.teachers;
+            List<Teacher> teachers = college.Teachers;
             dataGridViewTeachers.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < teachers.Count; rowIndex++)
@@ -51,31 +51,31 @@ namespace ObjectOrientedCollege
                 var row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].firstName
+                    Value = teachers[rowIndex].FirstName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].lastName
+                    Value = teachers[rowIndex].LastName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].age
+                    Value = teachers[rowIndex].Age
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].phoneNumber
+                    Value = teachers[rowIndex].PhoneNumber
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].salary
+                    Value = teachers[rowIndex].Salary
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].moneyAmount
+                    Value = teachers[rowIndex].MoneyAmount
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = teachers[rowIndex].subject
+                    Value = teachers[rowIndex].Subject
                 });
                 row.Cells.Add(new DataGridViewButtonCell()
                 {
@@ -88,7 +88,7 @@ namespace ObjectOrientedCollege
 
         private void RedrawTechniciansGrid()
         {
-            List<Technician> technicians = college.technicians;
+            List<Technician> technicians = college.Technicians;
             dataGridViewTechnicians.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < technicians.Count; rowIndex++)
@@ -96,27 +96,27 @@ namespace ObjectOrientedCollege
                 var row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].firstName
+                    Value = technicians[rowIndex].FirstName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].lastName
+                    Value = technicians[rowIndex].LastName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].age
+                    Value = technicians[rowIndex].Age
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].phoneNumber
+                    Value = technicians[rowIndex].PhoneNumber
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].salary
+                    Value = technicians[rowIndex].Salary
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = technicians[rowIndex].moneyAmount
+                    Value = technicians[rowIndex].MoneyAmount
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
@@ -158,7 +158,7 @@ namespace ObjectOrientedCollege
                 int teacherNumber = college.FindTeacherIndex(selectedTeachersFirstName, selectedTeachersLastName);
                 if (teacherNumber != -1)
                 {
-                    college.RemoveTeacher(college.teachers[teacherNumber]);
+                    college.RemoveTeacher(college.Teachers[teacherNumber]);
                     RedrawTeachersGrid();
                 }
             }
@@ -177,7 +177,7 @@ namespace ObjectOrientedCollege
                 int technicianNumber = college.FindTechnicianIndex(selectedTechnicianFirstName, selectedTechnicianLastName);
                 if (technicianNumber != -1)
                 {
-                    college.RemoveTechnician(college.technicians[technicianNumber]);
+                    college.RemoveTechnician(college.Technicians[technicianNumber]);
                     RedrawTechniciansGrid();
                 }
             }

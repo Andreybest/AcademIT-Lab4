@@ -19,9 +19,9 @@ namespace ObjectOrientedCollege
         private void StartLessonForm_Load(object sender, EventArgs e)
         {
             List<ComboboxTeacherItem> itemsTeachers = new List<ComboboxTeacherItem>();
-            for (int i = 0; i < college.teachers.Count; i++)
+            for (int i = 0; i < college.Teachers.Count; i++)
             {
-                ComboboxTeacherItem item = new ComboboxTeacherItem(college.teachers[i].firstName + " " + college.teachers[i].lastName, college.teachers[i]);
+                ComboboxTeacherItem item = new ComboboxTeacherItem(college.Teachers[i].FirstName + " " + college.Teachers[i].LastName, college.Teachers[i]);
                 itemsTeachers.Add(item);
             }
             for (int i = 0; i < itemsTeachers.Count; i++)
@@ -35,9 +35,9 @@ namespace ObjectOrientedCollege
             }
 
             List<ComboboxGroupItem> itemsGroups = new List<ComboboxGroupItem>();
-            for (int i = 0; i < college.studentGroups.Count; i++)
+            for (int i = 0; i < college.StudentGroups.Count; i++)
             {
-                ComboboxGroupItem item = new ComboboxGroupItem(college.studentGroups[i].groupNumber.ToString(), college.studentGroups[i]);
+                ComboboxGroupItem item = new ComboboxGroupItem(college.StudentGroups[i].GroupNumber.ToString(), college.StudentGroups[i]);
                 itemsGroups.Add(item);
             }
             for (int i = 0; i < itemsGroups.Count; i++)
@@ -51,9 +51,9 @@ namespace ObjectOrientedCollege
             }
 
             List<ComboboxAudienceItem> itemsAudiences = new List<ComboboxAudienceItem>();
-            for (int i = 0; i < college.audiences.Count; i++)
+            for (int i = 0; i < college.Audiences.Count; i++)
             {
-                ComboboxAudienceItem item = new ComboboxAudienceItem(college.audiences[i].roomNumber.ToString(), college.audiences[i]);
+                ComboboxAudienceItem item = new ComboboxAudienceItem(college.Audiences[i].RoomNumber.ToString(), college.Audiences[i]);
                 itemsAudiences.Add(item);
             }
             for (int i = 0; i < itemsAudiences.Count; i++)

@@ -8,11 +8,11 @@ namespace ObjectOrientedCollege
 
         Random rand = new Random();
 
-        public readonly string subject;
+        public readonly string Subject;
 
         public Teacher(string firstName, string lastName, int age, string phoneNumber, int salary, string subject) : base(firstName, lastName, age, phoneNumber, salary)
         {
-            this.subject = subject;
+            this.Subject = subject;
         }
 
         private const int _minRandomKnowlage = 1;

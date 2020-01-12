@@ -2,16 +2,16 @@
 {
     public abstract class Employee : Human, IMoneyGetting
     {
-        public int salary;
+        public int Salary;
 
         public Employee(string firstName, string lastName, int age, string phoneNumber, int salary) : base(firstName, lastName, age, phoneNumber)
         {
-            this.salary = salary;
+            this.Salary = salary;
         }
 
         public void MakeMoney()
         {
-            moneyAmount += salary;
+            MoneyAmount += Salary;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace ObjectOrientedCollege
 
         public void RedrawGrid()
         {
-            List<Student> students = college.students;
+            List<Student> students = college.Students;
             dataGridViewStudents.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < students.Count; rowIndex++)
@@ -28,23 +28,23 @@ namespace ObjectOrientedCollege
                 var row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].firstName
+                    Value = students[rowIndex].FirstName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].lastName
+                    Value = students[rowIndex].LastName
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].age
+                    Value = students[rowIndex].Age
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].phoneNumber
+                    Value = students[rowIndex].PhoneNumber
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].group
+                    Value = students[rowIndex].Group
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
@@ -52,7 +52,7 @@ namespace ObjectOrientedCollege
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = students[rowIndex].moneyAmount
+                    Value = students[rowIndex].MoneyAmount
                 });
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
@@ -77,14 +77,14 @@ namespace ObjectOrientedCollege
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                college.students[e.RowIndex].SelfStudy();
+                college.Students[e.RowIndex].SelfStudy();
                 RedrawGrid();
             }
         }
 
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {
-            if (college.studentGroups.Count < 1)
+            if (college.StudentGroups.Count < 1)
             {
                 MessageBox.Show(NoGroupsMessage);
             }
@@ -107,12 +107,12 @@ namespace ObjectOrientedCollege
                 string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[StudentFirstNameColumnIndex].Value.ToString();
                 string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[StudentLastNameColumnIndex].Value.ToString();
                 int studentNumber = college.FindStudentIndex(selectedStudentFirstName, selectedStudentLastName);
-                int studentGroupNumber = college.studentGroups[college.FindGroupIndex(college.students[studentNumber].group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
-                int groupNumber = college.FindGroupIndex(college.students[studentNumber].group);
+                int studentGroupNumber = college.StudentGroups[college.FindGroupIndex(college.Students[studentNumber].Group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                int groupNumber = college.FindGroupIndex(college.Students[studentNumber].Group);
                 if (studentNumber != -1 && studentGroupNumber != -1)
                 {
-                    college.studentGroups[groupNumber].RemoveStudent(college.students[studentNumber]);
-                    college.RemoveStudent(college.students[studentNumber]);
+                    college.StudentGroups[groupNumber].RemoveStudent(college.Students[studentNumber]);
+                    college.RemoveStudent(college.Students[studentNumber]);
                     RedrawGrid();
                 }
             }

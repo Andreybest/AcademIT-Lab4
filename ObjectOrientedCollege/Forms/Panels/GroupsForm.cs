@@ -23,7 +23,7 @@ namespace ObjectOrientedCollege
 
         public void RedrawGrid()
         {
-            List<StudentGroup> groups = college.studentGroups;
+            List<StudentGroup> groups = college.StudentGroups;
             dataGridViewGroups.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < groups.Count; rowIndex++)
@@ -31,13 +31,13 @@ namespace ObjectOrientedCollege
                 var row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = groups[rowIndex].groupNumber
+                    Value = groups[rowIndex].GroupNumber
                 });
                 if (groups[rowIndex].GroupHeadmanExists())
                 {
                     row.Cells.Add(new DataGridViewTextBoxCell()
                     {
-                        Value = groups[rowIndex].GroupHeadman.firstName + " " + groups[rowIndex].GroupHeadman.lastName
+                        Value = groups[rowIndex].GroupHeadman.FirstName + " " + groups[rowIndex].GroupHeadman.LastName
                     });
                 }
                 else
@@ -82,9 +82,9 @@ namespace ObjectOrientedCollege
             {
                 if (e.ColumnIndex == 3)
                 {
-                    if (college.studentGroups[e.RowIndex].GroupHeadmanExists())
+                    if (college.StudentGroups[e.RowIndex].GroupHeadmanExists())
                     {
-                        MessageBox.Show(college.studentGroups[e.RowIndex].ToString());
+                        MessageBox.Show(college.StudentGroups[e.RowIndex].ToString());
                     }
                     else
                     {
@@ -93,9 +93,9 @@ namespace ObjectOrientedCollege
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    if (!college.studentGroups[e.RowIndex].GroupHeadmanExists())
+                    if (!college.StudentGroups[e.RowIndex].GroupHeadmanExists())
                     {
-                        AddHeadmanForm form = new AddHeadmanForm(college, college.studentGroups[e.RowIndex].groupNumber);
+                        AddHeadmanForm form = new AddHeadmanForm(college, college.StudentGroups[e.RowIndex].GroupNumber);
                         form.FormClosing += delegate { RedrawGrid(); };
                         form.Show();
                     }
@@ -126,13 +126,13 @@ namespace ObjectOrientedCollege
                 int groupIndex = college.FindGroupIndex(groupNumber);
                 if (groupIndex != -1)
                 {
-                    if (college.studentGroups[groupIndex].HasStudents())
+                    if (college.StudentGroups[groupIndex].HasStudents())
                     {
                         MessageBox.Show(GroupHaveStudentsMessage);
                     }
                     else
                     {
-                        college.RemoveGroup(college.studentGroups[groupIndex]);
+                        college.RemoveGroup(college.StudentGroups[groupIndex]);
                         RedrawGrid();
                     }
                 }

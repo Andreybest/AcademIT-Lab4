@@ -19,7 +19,7 @@ namespace ObjectOrientedCollege
         
         public void RedrawGrid()
         {
-            List<Audience> audiences = college.audiences;
+            List<Audience> audiences = college.Audiences;
             dataGridViewAudiences.Rows.Clear();
 
             for (int rowIndex = 0; rowIndex < audiences.Count; rowIndex++)
@@ -27,7 +27,7 @@ namespace ObjectOrientedCollege
                 var row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell()
                 {
-                    Value = audiences[rowIndex].roomNumber
+                    Value = audiences[rowIndex].RoomNumber
                 });
                 row.Cells.Add(new DataGridViewProgressCell()
                 {
@@ -45,9 +45,9 @@ namespace ObjectOrientedCollege
         private void AudiencesForm_Load(object sender, EventArgs e)
         {
             List<ComboboxTechicianItem> items = new List<ComboboxTechicianItem>();
-            for (int i = 0; i < college.technicians.Count; i++)
+            for (int i = 0; i < college.Technicians.Count; i++)
             {
-                ComboboxTechicianItem item = new ComboboxTechicianItem(college.technicians[i].firstName + " " + college.technicians[i].lastName, college.technicians[i]);
+                ComboboxTechicianItem item = new ComboboxTechicianItem(college.Technicians[i].FirstName + " " + college.Technicians[i].LastName, college.Technicians[i]);
                 items.Add(item);
             }
             for (int i = 0; i < items.Count; i++)
@@ -69,7 +69,7 @@ namespace ObjectOrientedCollege
 
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
                 {
-                    (comboBoxTechnicians.SelectedItem as ComboboxTechicianItem).Value.CleanAudince(college.audiences[e.RowIndex]);
+                    (comboBoxTechnicians.SelectedItem as ComboboxTechicianItem).Value.CleanAudince(college.Audiences[e.RowIndex]);
                     RedrawGrid();
                 }
             }
@@ -98,7 +98,7 @@ namespace ObjectOrientedCollege
                 int audienceIndex = college.FindAudienceIndex(audienceNumber);
                 if (audienceIndex != -1)
                 {
-                    college.RemoveAudience(college.audiences[audienceIndex]);
+                    college.RemoveAudience(college.Audiences[audienceIndex]);
                     RedrawGrid();
                 }
             }

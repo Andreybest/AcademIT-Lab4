@@ -17,9 +17,9 @@ namespace ObjectOrientedCollege
 
         private void AddHeadmanForm_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < college.studentGroups.Count; i++)
+            for (int i = 0; i < college.StudentGroups.Count; i++)
             {
-                comboBoxGroups.Items.Add(college.studentGroups[i].groupNumber);
+                comboBoxGroups.Items.Add(college.StudentGroups[i].GroupNumber);
             }
             comboBoxGroups.SelectedIndex = comboBoxGroups.FindStringExact(group.ToString());
         }

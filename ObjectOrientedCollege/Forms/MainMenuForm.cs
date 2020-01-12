@@ -16,8 +16,8 @@ namespace ObjectOrientedCollege
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            labelCollegeName.Text = college.name;
-            labelAddress.Text = college.address;
+            labelCollegeName.Text = college.Name;
+            labelAddress.Text = college.Address;
         }
 
         private void buttonStudents_Click(object sender, EventArgs e)
