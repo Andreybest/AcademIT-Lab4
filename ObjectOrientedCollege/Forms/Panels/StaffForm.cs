@@ -37,7 +37,13 @@ namespace ObjectOrientedCollege
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                RedrawTechniciansGrid();
+                AudiencesForm form = new AudiencesForm(college);
+                form.FormClosing += delegate {
+                    RedrawTechniciansGrid();
+                    Show();
+                };
+                form.Show();
+                Hide();
             }
         }
 
