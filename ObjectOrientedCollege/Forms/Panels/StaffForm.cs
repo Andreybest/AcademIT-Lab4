@@ -155,10 +155,10 @@ namespace ObjectOrientedCollege
             {
                 string selectedTeachersFirstName = dataGridViewTeachers.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
                 string selectedTeachersLastName = dataGridViewTeachers.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
-                int teacherNumber = college.FindTeacherIndex(selectedTeachersFirstName, selectedTeachersLastName);
-                if (teacherNumber != -1)
+                Teacher teacher = college.FindTeacher(selectedTeachersFirstName, selectedTeachersLastName);
+                if (teacher != null)
                 {
-                    college.RemoveTeacher(college.Teachers[teacherNumber]);
+                    college.RemoveTeacher(teacher);
                     RedrawTeachersGrid();
                 }
             }
@@ -174,10 +174,10 @@ namespace ObjectOrientedCollege
             {
                 string selectedTechnicianFirstName = dataGridViewTechnicians.SelectedRows[0].Cells[FirstNameColumnIndex].Value.ToString();
                 string selectedTechnicianLastName = dataGridViewTechnicians.SelectedRows[0].Cells[LastNameColumnIndex].Value.ToString();
-                int technicianNumber = college.FindTechnicianIndex(selectedTechnicianFirstName, selectedTechnicianLastName);
-                if (technicianNumber != -1)
+                Technician technician = college.FindTechnician(selectedTechnicianFirstName, selectedTechnicianLastName);
+                if (technician != null)
                 {
-                    college.RemoveTechnician(college.Technicians[technicianNumber]);
+                    college.RemoveTechnician(technician);
                     RedrawTechniciansGrid();
                 }
             }

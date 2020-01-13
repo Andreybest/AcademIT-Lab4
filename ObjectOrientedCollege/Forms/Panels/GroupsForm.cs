@@ -123,16 +123,16 @@ namespace ObjectOrientedCollege
             else
             {
                 int groupNumber = int.Parse(dataGridViewGroups.SelectedRows[0].Cells[GroupNumberColumnIndex].Value.ToString());
-                int groupIndex = college.FindGroupIndex(groupNumber);
-                if (groupIndex != -1)
+                StudentGroup group = college.FindGroup(groupNumber);
+                if (group != null)
                 {
-                    if (college.StudentGroups[groupIndex].HasStudents())
+                    if (group.HasStudents())
                     {
                         MessageBox.Show(GroupHaveStudentsMessage);
                     }
                     else
                     {
-                        college.RemoveGroup(college.StudentGroups[groupIndex]);
+                        college.RemoveGroup(group);
                         RedrawGrid();
                     }
                 }

@@ -106,13 +106,12 @@ namespace ObjectOrientedCollege
             {
                 string selectedStudentFirstName = dataGridViewStudents.SelectedRows[0].Cells[StudentFirstNameColumnIndex].Value.ToString();
                 string selectedStudentLastName = dataGridViewStudents.SelectedRows[0].Cells[StudentLastNameColumnIndex].Value.ToString();
-                int studentNumber = college.FindStudentIndex(selectedStudentFirstName, selectedStudentLastName);
-                int studentGroupNumber = college.StudentGroups[college.FindGroupIndex(college.Students[studentNumber].Group)].FindStudent(selectedStudentFirstName, selectedStudentLastName);
-                int groupNumber = college.FindGroupIndex(college.Students[studentNumber].Group);
-                if (studentNumber != -1 && studentGroupNumber != -1)
+                Student student = college.FindStudent(selectedStudentFirstName, selectedStudentLastName);
+                StudentGroup group = college.FindGroup(student.Group);
+                if (student != null && group != null)
                 {
-                    college.StudentGroups[groupNumber].RemoveStudent(college.Students[studentNumber]);
-                    college.RemoveStudent(college.Students[studentNumber]);
+                    group.RemoveStudent(student);
+                    college.RemoveStudent(student);
                     RedrawGrid();
                 }
             }

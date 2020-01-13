@@ -95,10 +95,10 @@ namespace ObjectOrientedCollege
             else
             {
                 int audienceNumber = int.Parse(dataGridViewAudiences.SelectedRows[0].Cells[AudienceNumberColumnIndex].Value.ToString());
-                int audienceIndex = college.FindAudienceIndex(audienceNumber);
-                if (audienceIndex != -1)
+                Audience audience = college.FindAudience(audienceNumber);
+                if (audience != null)
                 {
-                    college.RemoveAudience(college.Audiences[audienceIndex]);
+                    college.RemoveAudience(audience);
                     RedrawGrid();
                 }
             }

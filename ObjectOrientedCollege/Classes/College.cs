@@ -29,7 +29,7 @@ namespace ObjectOrientedCollege
             Audiences.Add(audience);
         }
 
-        public int FindAudienceIndex(int roomNumber)
+        private int FindAudienceIndex(int roomNumber)
         {
             for (int i = 0; i < Audiences.Count; i++)
             {
@@ -39,6 +39,16 @@ namespace ObjectOrientedCollege
                 }
             }
             return -1;
+        }
+
+        public Audience FindAudience(int roomNumber)
+        {
+            int audienceIndex = FindAudienceIndex(roomNumber);
+            if (audienceIndex != -1)
+            {
+                return Audiences[audienceIndex];
+            }
+            return null;
         }
 
         public void RemoveAudience(Audience audience)
@@ -57,7 +67,7 @@ namespace ObjectOrientedCollege
             StudentGroups.Add(studentGroup);
         }
 
-        public int FindGroupIndex(int groupNumber)
+        private int FindGroupIndex(int groupNumber)
         {
             for (int i = 0; i < StudentGroups.Count; i++)
             {
@@ -67,6 +77,16 @@ namespace ObjectOrientedCollege
                 }
             }
             return -1;
+        }
+
+        public StudentGroup FindGroup(int groupNumber)
+        {
+            int groupIndex = FindGroupIndex(groupNumber);
+            if (groupIndex != -1)
+            {
+                return StudentGroups[groupIndex];
+            }
+            return null;
         }
 
         public void RemoveGroup(StudentGroup group)
@@ -84,7 +104,7 @@ namespace ObjectOrientedCollege
             Teachers.Add(teacher);
         }
 
-        public int FindTeacherIndex(string firstName, string lastName)
+        private int FindTeacherIndex(string firstName, string lastName)
         {
             for (int i = 0; i < Teachers.Count; i++)
             {
@@ -94,6 +114,16 @@ namespace ObjectOrientedCollege
                 }
             }
             return -1;
+        }
+
+        public Teacher FindTeacher(string firstName, string lastName)
+        {
+            int teacherIndex = FindTeacherIndex(firstName, lastName);
+            if (teacherIndex != -1)
+            {
+                return Teachers[teacherIndex];
+            }
+            return null;
         }
 
         public void RemoveTeacher(Teacher teacher)
@@ -119,7 +149,7 @@ namespace ObjectOrientedCollege
             Students.Add(student);
         }
 
-        public int FindStudentIndex(string firstName, string lastName)
+        private int FindStudentIndex(string firstName, string lastName)
         {
             for (int i = 0; i < Students.Count; i++)
             {
@@ -129,6 +159,16 @@ namespace ObjectOrientedCollege
                 }
             }
             return -1;
+        }
+
+        public Student FindStudent(string firstName, string lastName)
+        {
+            int studentIndex = FindStudentIndex(firstName, lastName);
+            if (studentIndex != -1)
+            {
+                return Students[studentIndex];
+            }
+            return null;
         }
 
         public void RemoveStudent(Student student)
@@ -171,7 +211,7 @@ namespace ObjectOrientedCollege
             Technicians.Add(technician);
         }
 
-        public int FindTechnicianIndex(string firstName, string lastName)
+        private int FindTechnicianIndex(string firstName, string lastName)
         {
             for (int i = 0; i < Technicians.Count; i++)
             {
@@ -181,6 +221,16 @@ namespace ObjectOrientedCollege
                 }
             }
             return -1;
+        }
+
+        public Technician FindTechnician(string firstName, string lastName)
+        {
+            int technicianIndex = FindTechnicianIndex(firstName, lastName);
+            if (technicianIndex != -1)
+            {
+                return Technicians[technicianIndex];
+            }
+            return null;
         }
 
         public void RemoveTechnician(Technician technician)
